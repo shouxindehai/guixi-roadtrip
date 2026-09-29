@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>桂西南五日环线</title>
+<meta name="description" content="2026 国庆 · 深圳出发 5 天 4 宿自驾：梧州 — 明仕田园 — 德天瀑布 — 靖西 — 南宁，含避堵时段、省钱攻略与美食清单。">
+<meta name="theme-color" content="#1E4D3E">
+<style>
+/* ─────────────────────────────  tokens  ───────────────────────────── */
+:root{
+  color-scheme: light;
+  --paper:#FAF6EE;
+  --paper-2:#F4EEE2;
+  --paper-3:#EDE5D5;
+  --ink:#231F1A;
+  --ink-2:#574F47;
+  --ink-3:#8B8178;
+  --rule:#E2D9C8;
+  --rule-2:#D3C7B1;
+
+  --brand:#1E4D3E;
+  --brand-soft:#E8F0EA;
+  --clay:#C2562F;
+
+  /* day palette — validated: CVD/contrast checks all pass on this surface */
+  --d1:#C2562F;  --d1-soft:#F7E7DF;
+  --d2:#0E8F6F;  --d2-soft:#DFF0EA;
+  --d3:#2F5AA8;  --d3-soft:#E1E8F5;
+  --d4:#B07A00;  --d4-soft:#F6ECD4;
+  --d5:#9B4F86;  --d5-soft:#F3E5EE;
+
+  /* status — fixed roles, always paired with a text label */
+  --good:#0CA30C;
+  --warning:#FAB219;
+  --serious:#EC835A;
+  --critical:#D03B3B;
+
+  --maxw:1080px;
+  --font-sans:"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-serif:"Songti SC","STSong","Noto Serif SC","SimSun",Georgia,serif;
+  --shadow-s:0 1px 2px rgba(60,45,25,.06), 0 3px 10px rgba(60,45,25,.05);
+  --shadow-m:0 2px 4px rgba(60,45,25,.07), 0 10px 28px rgba(60,45,25,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#16150F;
+    --paper-2:#1E1C15;
+    --paper-3:#26231A;
+    --ink:#F5F0E4;
+    --ink-2:#C4BCAB;
+    --ink-3:#938B7D;
+    --rule:#33301F;
+    --rule-2:#403C2A;
+    --brand:#6FBF9C;
+    --brand-soft:#1C2C24;
+    --clay:#E07C52;
+    --d1:#E07C52; --d1-soft:#2E1E15;
+    --d2:#2FB68F; --d2-soft:#12261F;
+    --d3:#6E9BE8; --d3-soft:#161E2E;
+    --d4:#D6A020; --d4-soft:#2A2110;
+    --d5:#CE83B4; --d5-soft:#291A24;
+    --shadow-s:0 1px 2px rgba(0,0,0,.4), 0 3px 10px rgba(0,0,0,.3);
+    --shadow-m:0 2px 4px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#16150F; --paper-2:#1E1C15; --paper-3:#26231A;
+  --ink:#F5F0E4; --ink-2:#C4BCAB; --ink-3:#938B7D;
+  --rule:#33301F; --rule-2:#403C2A;
+  --brand:#6FBF9C; --brand-soft:#1C2C24; --clay:#E07C52;
+  --d1:#E07C52; --d1-soft:#2E1E15;
+  --d2:#2FB68F; --d2-soft:#12261F;
+  --d3:#6E9BE8; --d3-soft:#161E2E;
+  --d4:#D6A020; --d4-soft:#2A2110;
+  --d5:#CE83B4; --d5-soft:#291A24;
+  --shadow-s:0 1px 2px rgba(0,0,0,.4), 0 3px 10px rgba(0,0,0,.3);
+  --shadow-m:0 2px 4px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.35);
+}
+
+/* ─────────────────────────────  base  ───────────────────────────── */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.038'/%3E%3C/svg%3E");
+  color:var(--ink);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.75;
+  letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:54px 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+
+h1,h2,h3,h4{line-height:1.3;letter-spacing:0;margin:0}
+h2{font-size:clamp(25px,4.4vw,34px);font-weight:700;margin-bottom:6px}
+h3{font-size:clamp(18px,2.8vw,21px);font-weight:700;margin:32px 0 10px}
+h4{font-size:16px;font-weight:700;margin:0 0 6px}
+p{margin:0 0 14px}
+a{color:var(--brand)}
+strong{font-weight:700;color:var(--ink)}
+small{font-size:13px}
+
+.eyebrow{
+  font-family:var(--font-serif);
+  font-size:12px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--clay);font-weight:700;margin:0 0 12px;
+}
+.lede{font-size:clamp(16px,2.4vw,18px);color:var(--ink-2);max-width:62ch;margin-bottom:26px}
+.muted{color:var(--ink-3)}
+
+/* ─────────────────────────────  hero  ───────────────────────────── */
+.hero{position:relative;overflow:hidden;border-top:0;padding:0 0 34px}
+.hero-art{display:block;width:100%;height:auto}
+.hero-body{padding-top:30px}
+.hero h1{
+  font-size:clamp(38px,8.4vw,74px);
+  font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0 0 14px;
+}
+.hero h1 em{font-style:normal;color:var(--clay)}
+.route-line{
+  font-family:var(--font-serif);font-size:clamp(14px,2.3vw,17px);
+  color:var(--ink-2);line-height:2;margin-bottom:24px;
+}
+.route-line b{color:var(--ink);font-weight:700}
+.route-line span{color:var(--ink-3);padding:0 .35em}
+
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden;
+}
+.stat{background:var(--paper-2);padding:16px 14px}
+.stat b{display:block;font-size:clamp(20px,3.6vw,28px);font-weight:800;line-height:1.2;letter-spacing:-.01em}
+.stat small{display:block;color:var(--ink-3);font-size:12px;margin-top:3px;letter-spacing:.06em}
+@media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ─────────────────────────────  figures  ───────────────────────────── */
+figure{margin:0 0 10px}
+.fig-scroll{
+  overflow-x:auto;overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  border:1px solid var(--rule);border-radius:14px;
+  background:var(--paper-2);
+  box-shadow:var(--shadow-s);
+}
+.fig-scroll > svg{display:block;min-width:820px;width:100%;height:auto}
+figcaption{font-size:13px;color:var(--ink-3);margin-top:10px;line-height:1.7}
+.swipe-hint{display:none;font-size:12px;color:var(--ink-3);margin:8px 0 0;text-align:center}
+@media(max-width:760px){.swipe-hint{display:block}}
+
+/* map typography — every label gets a paper halo so it stays legible over routes */
+.m-city,.m-city-sm,.m-sub,.m-seg text,.m-seg,.m-cut{
+  paint-order:stroke fill;
+  stroke:var(--paper-2);
+  stroke-width:3.6px;
+  stroke-linejoin:round;
+}
+.m-city{font:700 15px var(--font-sans);fill:var(--ink)}
+.m-city-sm{font:600 13px var(--font-sans);fill:var(--ink-2)}
+.m-sub{font:500 11.5px var(--font-sans);fill:var(--ink-3)}
+.m-seg{font:700 12px var(--font-sans)}
+.m-region{font:600 13px var(--font-serif);fill:var(--ink-3);letter-spacing:.3em}
+.m-cut{font:600 12px var(--font-sans);fill:var(--ink-3)}
+
+/* ─────────────────────────────  cards  ───────────────────────────── */
+.card{
+  background:var(--paper-2);border:1px solid var(--rule);
+  border-radius:14px;padding:20px 22px;box-shadow:var(--shadow-s);
+}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:780px){.g2,.g3{grid-template-columns:1fr}}
+
+.callout{
+  border-left:4px solid var(--clay);
+  background:var(--paper-2);
+  border-radius:0 12px 12px 0;
+  padding:16px 20px;margin:20px 0;
+}
+.callout.good{border-left-color:var(--good)}
+.callout.warn{border-left-color:var(--critical)}
+.callout p:last-child{margin-bottom:0}
+.callout .tag{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;
+  color:var(--clay);margin-bottom:5px;
+}
+.callout.good .tag{color:var(--good)}
+.callout.warn .tag{color:var(--critical)}
+
+blockquote{
+  margin:16px 0;padding:14px 18px;
+  background:var(--paper-3);border-radius:12px;
+  font-family:var(--font-serif);font-size:15.5px;color:var(--ink-2);line-height:1.85;
+}
+blockquote p{margin:0 0 8px}
+blockquote p:last-child{margin:0}
+blockquote cite{display:block;font-family:var(--font-sans);font-style:normal;font-size:12px;color:var(--ink-3);margin-top:8px}
+
+/* ─────────────────────────────  day blocks  ───────────────────────────── */
+.day{margin:0 0 20px;border:1px solid var(--rule);border-radius:16px;overflow:hidden;background:var(--paper-2);box-shadow:var(--shadow-s)}
+.day-head{display:flex;align-items:flex-start;gap:14px;padding:18px 22px;border-bottom:1px solid var(--rule)}
+.day-badge{
+  flex:0 0 auto;width:52px;height:52px;border-radius:12px;
+  display:grid;place-content:center;text-align:center;line-height:1.1;
+  color:#fff;font-weight:800;
+}
+.day-badge small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.1em;opacity:.85}
+.day-badge b{font-size:21px;letter-spacing:-.02em}
+.day-title{flex:1 1 auto;min-width:0}
+.day-title h3{margin:0 0 3px;font-size:clamp(18px,3vw,22px)}
+.day-meta{font-size:13px;color:var(--ink-3)}
+.day-meta b{color:var(--ink-2);font-weight:600}
+.day-body{padding:18px 22px 22px}
+
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding:0 0 16px 78px;min-height:26px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{
+  content:"";position:absolute;left:57px;top:9px;width:9px;height:9px;border-radius:50%;
+  background:var(--paper-2);border:2.5px solid var(--tl-c,var(--brand));
+}
+.tl li::after{
+  content:"";position:absolute;left:61px;top:20px;bottom:-2px;width:1.5px;background:var(--rule-2);
+}
+.tl li:last-child::after{display:none}
+.tl time{
+  position:absolute;left:0;top:0;width:50px;text-align:right;
+  font-family:var(--font-serif);font-size:13.5px;font-weight:700;color:var(--ink-2);
+  font-variant-numeric:tabular-nums;
+}
+.tl b{display:block;font-size:15.5px}
+.tl span{display:block;font-size:14px;color:var(--ink-2);line-height:1.7}
+
+.pill{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;
+  padding:2px 9px;border-radius:99px;margin-right:6px;vertical-align:1px;
+}
+
+/* ─────────────────────────────  tables  ───────────────────────────── */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:12px;background:var(--paper-2)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:480px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:12px;letter-spacing:.09em;color:var(--ink-3);font-weight:700;background:var(--paper-3);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td b{font-weight:700}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ─────────────────────────────  congestion strip  ───────────────────────────── */
+.strip{display:grid;grid-template-columns:64px repeat(7,1fr);gap:4px;align-items:stretch}
+.strip .rl{
+  display:flex;align-items:center;font-size:12.5px;font-weight:700;color:var(--ink-3);
+}
+.cell{
+  border-radius:8px;padding:9px 4px 8px;text-align:center;color:#fff;
+  font-size:12px;font-weight:700;line-height:1.35;
+}
+.cell .dt{display:block;font-size:10.5px;font-weight:700;opacity:.9;letter-spacing:.02em}
+.cell.lv1{background:var(--good)}
+.cell.lv2{background:var(--warning);color:#3A2A00}
+.cell.lv3{background:var(--serious);color:#3B1A08}
+.cell.lv4{background:var(--critical)}
+.cell.you{outline:3px solid var(--ink);outline-offset:2px}
+.strip-head{display:grid;grid-template-columns:64px repeat(7,1fr);gap:4px;margin-bottom:6px}
+.strip-head div{text-align:center;font-size:12px;font-weight:700;color:var(--ink-2)}
+.strip-head div:first-child{text-align:left}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:12.5px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+@media(max-width:620px){
+  .strip,.strip-head{grid-template-columns:48px repeat(7,1fr);gap:3px}
+  .cell{font-size:10.5px;padding:7px 1px}
+  .cell .dt{font-size:9px}
+  .strip .rl,.strip-head div{font-size:11px}
+}
+
+/* departure window bar */
+.win{display:grid;gap:6px;margin:6px 0 0}
+.win-row{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center}
+.win-row .t{font-family:var(--font-serif);font-size:13.5px;font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.win-bar{height:34px;border-radius:8px;display:flex;align-items:center;padding:0 12px;font-size:13px;font-weight:700;color:#fff}
+.win-bar.lv1{background:var(--good)}
+.win-bar.lv2{background:var(--warning);color:#3A2A00}
+.win-bar.lv3{background:var(--serious);color:#3B1A08}
+.win-bar.lv4{background:var(--critical)}
+.win-row.pick .t{color:var(--brand)}
+.win-row.pick .win-bar{outline:3px solid var(--brand);outline-offset:2px}
+@media(max-width:560px){.win-row{grid-template-columns:78px 1fr;gap:8px}.win-bar{font-size:12px;padding:0 9px}}
+
+/* ─────────────────────────────  spots & food  ───────────────────────────── */
+.spot{border:1px solid var(--rule);border-radius:14px;background:var(--paper-2);padding:18px 20px;box-shadow:var(--shadow-s)}
+.spot .ico{display:block;margin-bottom:10px}
+.spot h4{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.spot .price{font-size:12.5px;font-weight:700;color:var(--clay);font-variant-numeric:tabular-nums}
+.spot ul{margin:8px 0 0;padding-left:18px;font-size:14.5px;color:var(--ink-2);line-height:1.8}
+.spot li{margin-bottom:3px}
+
+.food-city{margin-bottom:26px}
+.food-city > h4{
+  display:flex;align-items:center;gap:10px;font-size:17px;
+  padding-bottom:8px;border-bottom:2px solid var(--rule-2);margin-bottom:12px;
+}
+.food-city > h4 .dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto}
+.food{display:grid;gap:10px}
+.food-item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.food-item .star{font-size:12px;font-weight:700;color:var(--clay);white-space:nowrap;padding-top:2px;min-width:34px}
+.food-item b{font-weight:700}
+.food-item p{margin:1px 0 0;font-size:14px;color:var(--ink-2);line-height:1.7}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.check li{position:relative;padding-left:30px;font-size:15px;line-height:1.7}
+.check li::before{
+  content:"";position:absolute;left:0;top:5px;width:16px;height:16px;
+  border:2px solid var(--rule-2);border-radius:4px;background:var(--paper);
+}
+.check li b{font-weight:700}
+
+/* footer */
+footer{border-top:1px solid var(--rule);padding:30px 0 60px;font-size:13px;color:var(--ink-3);line-height:1.9}
+footer b{color:var(--ink-2)}
+
+/* theme toggle */
+.tt{
+  position:fixed;right:14px;bottom:14px;z-index:50;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--rule-2);background:var(--paper-2);color:var(--ink-2);
+  font-size:17px;cursor:pointer;box-shadow:var(--shadow-m);
+  display:grid;place-content:center;
+}
+
+/* ─────────────────────────────  print / pdf  ───────────────────────────── */
+@media print{
+  :root,:root[data-theme="dark"]{
+    color-scheme:light;
+    --paper:#fff;--paper-2:#FCFAF5;--paper-3:#F5F1E8;
+    --ink:#111;--ink-2:#333;--ink-3:#666;--rule:#D6CDBC;--rule-2:#B9AD96;
+    --brand:#1E4D3E;--brand-soft:#E8F0EA;--clay:#C2562F;
+    --d1:#C2562F;--d1-soft:#F7E7DF;--d2:#0E8F6F;--d2-soft:#DFF0EA;
+    --d3:#2F5AA8;--d3-soft:#E1E8F5;--d4:#B07A00;--d4-soft:#F6ECD4;
+    --d5:#9B4F86;--d5-soft:#F3E5EE;
+  }
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  body{background-image:none;font-size:11.5pt;line-height:1.6}
+  .fig-scroll{overflow:visible}
+  .hero-art{max-height:150px;object-fit:cover}
+  .tt,.swipe-hint{display:none!important}
+  section{padding:20px 0;break-inside:auto}
+  .day,.card,.spot,.fig-scroll,.callout,blockquote,.tbl-wrap{break-inside:avoid;box-shadow:none}
+  h2,h3{break-after:avoid}
+  .fig-scroll>svg{min-width:0}
+  .hero{padding-bottom:12px}
+  a{color:inherit;text-decoration:none}
+  @page{margin:14mm 12mm}
+}
+</style>
+</head>
+<body>
+
+<button class="tt" id="tt" aria-label="切换深色模式">◐</button>
+
+<!-- ══════════════════════════════  HERO  ══════════════════════════════ -->
+<header class="hero">
+  <svg class="hero-art" viewBox="0 0 1200 260" role="img" aria-label="喀斯特峰林与跨国瀑布的插画">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--paper-3)"/>
+        <stop offset="100%" stop-color="var(--paper)"/>
+      </linearGradient>
+      <linearGradient id="fall" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--d3)" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="var(--d2)" stop-opacity=".30"/>
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="260" fill="url(#sky)"/>
+    <circle cx="960" cy="74" r="30" fill="var(--d4)" opacity=".28"/>
+    <!-- far peaks -->
+    <g fill="var(--brand)" opacity=".16">
+      <path d="M0 260 L60 150 Q78 122 96 150 L150 236 L186 168 Q202 140 218 168 L268 260Z"/>
+      <path d="M240 260 L300 138 Q320 108 340 138 L396 236 L430 176 Q446 150 462 176 L510 260Z"/>
+      <path d="M520 260 L578 158 Q596 130 614 158 L664 246 L690 196 Q704 172 718 196 L754 260Z"/>
+      <path d="M760 260 L822 146 Q840 118 858 146 L910 240 L946 182 Q962 156 978 182 L1030 260Z"/>
+      <path d="M1020 260 L1078 164 Q1096 136 1114 164 L1168 252 L1200 210 L1200 260Z"/>
+    </g>
+    <!-- mid peaks -->
+    <g fill="var(--brand)" opacity=".30">
+      <path d="M80 260 L146 176 Q164 152 182 176 L240 260Z"/>
+      <path d="M330 260 L392 168 Q410 142 428 168 L492 260Z"/>
+      <path d="M640 260 L706 162 Q724 136 742 162 L806 260Z"/>
+      <path d="M900 260 L962 180 Q980 156 998 180 L1058 260Z"/>
+    </g>
+    <!-- waterfall -->
+    <g transform="translate(500,150)">
+      <path d="M0 0 h36 q6 42 -4 88 h-30 q-10 -46 -2 -88Z" fill="url(#fall)"/>
+      <path d="M40 6 h30 q5 36 -3 82 h-26 q-8 -40 -1 -82Z" fill="url(#fall)" opacity=".8"/>
+      <ellipse cx="38" cy="92" rx="56" ry="9" fill="var(--d2)" opacity=".22"/>
+    </g>
+    <!-- rice terraces -->
+    <g stroke="var(--d4)" stroke-width="2" fill="none" opacity=".45">
+      <path d="M60 232 q80 -16 168 -4"/>
+      <path d="M46 244 q92 -18 196 -5"/>
+      <path d="M980 226 q80 -14 168 -3"/>
+      <path d="M966 240 q92 -16 196 -4"/>
+    </g>
+    <!-- road -->
+    <path d="M-10 258 Q300 224 600 246 T1210 232" stroke="var(--clay)" stroke-width="3.5" fill="none" opacity=".65" stroke-linecap="round"/>
+    <path d="M-10 258 Q300 224 600 246 T1210 232" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-dasharray="10 12" opacity=".9"/>
+  </svg>
+
+  <div class="wrap hero-body">
+    <p class="eyebrow">2026 国庆 · 深圳出发 · 自驾</p>
+    <h1>桂西南<br><em>五日环线</em></h1>
+    <p class="route-line">
+      <b>深圳</b><span>→</span><b>梧州</b><span>→</span><b>明仕田园</b><span>→</span><b>德天瀑布</b><span>→</span><b>靖西</b><span>→</span><b>南宁</b><span>→</span><b>深圳</b>
+    </p>
+    <div class="stats">
+      <div class="stat"><b>10.1<span class="muted" style="font-size:.6em">下午</span>–10.5</b><small>5 天 4 宿</small></div>
+      <div class="stat"><b>≈1600<span class="muted" style="font-size:.6em">km</span></b><small>往返总里程</small></div>
+      <div class="stat"><b>≈25<span class="muted" style="font-size:.6em">h</span></b><small>净驾驶时间</small></div>
+      <div class="stat"><b>¥0</b><small>全程高速免费</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════  MAP 1  ══════════════════════════════ -->
+<section class="wrap" id="map">
+  <p class="eyebrow">全程示意</p>
+  <h2>线路长什么样</h2>
+  <p class="lede">一根从深圳伸到广西西端的「长柄」，柄头上挂着一个真正的环 —— 南宁出发经崇左向西北，绕过德天与靖西，再从那靖高速折回南宁。去程与回程只在南宁以东重合。</p>
+
+  <figure>
+    <div class="fig-scroll">
+      <svg viewBox="0 0 1160 560" role="img" aria-label="深圳到桂西南的全程路线示意图">
+        <rect width="1160" height="560" fill="var(--paper-2)"/>
+
+        <!-- sea -->
+        <path d="M330 560 Q450 484 550 466 Q670 446 790 466 L930 500 L1160 482 L1160 560Z" fill="var(--d3)" opacity=".12"/>
+        <text class="m-region" x="660" y="532" text-anchor="middle" fill="var(--d3)" opacity=".7">北 部 湾</text>
+
+        <!-- province divider -->
+        <path d="M762 60 Q744 190 770 330 Q788 420 772 500" stroke="var(--rule-2)" stroke-width="1.6" fill="none" stroke-dasharray="7 7"/>
+        <text class="m-region" x="700" y="86" text-anchor="middle">广 西</text>
+        <text class="m-region" x="850" y="86" text-anchor="middle">广 东</text>
+
+        <!-- vietnam border -->
+        <path d="M22 322 Q90 292 158 290 Q232 294 300 356 Q372 408 444 452" stroke="var(--brand)" stroke-width="1.8" fill="none" stroke-dasharray="3 6" opacity=".55"/>
+        <text class="m-region" x="132" y="366" fill="var(--brand)" opacity=".7">越 南</text>
+
+        <!-- karst decor -->
+        <g fill="var(--brand)" opacity=".13">
+          <path d="M330 292 L352 258 L374 292Z"/><path d="M366 306 L392 260 L418 306Z"/>
+          <path d="M240 388 L262 354 L284 388Z"/><path d="M330 400 L354 360 L378 400Z"/>
+          <path d="M150 128 L172 94 L194 128Z"/><path d="M196 112 L216 82 L236 112Z"/>
+          <path d="M60 148 L82 114 L104 148Z"/>
+        </g>
+
+        <!-- ══ routes ══ -->
+        <!-- Day1 -->
+        <path d="M1068 279 L986 283 L948 275 Q880 258 821 229 L729 156" stroke="var(--d1)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Day2 -->
+        <path d="M729 156 Q620 168 524 206 Q460 232 410 252 L300 332 L268 252 L212 228" stroke="var(--d2)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Day3 -->
+        <path d="M212 228 L158 264 L100 194" stroke="var(--d3)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Day4 -->
+        <path d="M100 194 Q250 166 410 252" stroke="var(--d4)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Day5 (offset return) -->
+        <path d="M410 270 Q460 252 524 224 Q620 186 729 174 Q790 200 838 244 Q890 286 948 293 L1068 297"
+              stroke="var(--d5)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 7"/>
+
+        <!-- segment labels -->
+        <g class="m-seg">
+          <text x="905" y="238" fill="var(--d1)" text-anchor="middle">D1 · 4.5–6h</text>
+          <text x="446" y="182" fill="var(--d2)" text-anchor="middle">D2 · 5.5h</text>
+          <text x="252" y="302" fill="var(--d3)" text-anchor="start">D3 · 3h</text>
+          <text x="252" y="156" fill="var(--d4)" text-anchor="middle">D4 · 3.5h</text>
+          <text x="660" y="138" fill="var(--d5)" text-anchor="middle">D5 · 7h 返程</text>
+        </g>
+
+        <!-- ══ cut spots ══ -->
+        <g opacity=".85">
+          <circle cx="470" cy="424" r="7" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="3 3"/>
+          <line x1="462" y1="416" x2="478" y2="432" stroke="var(--ink-3)" stroke-width="2"/>
+          <text class="m-cut" x="470" y="448" text-anchor="middle">北海 · 已砍</text>
+          <circle cx="46" cy="258" r="7" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="3 3"/>
+          <line x1="38" y1="250" x2="54" y2="266" stroke="var(--ink-3)" stroke-width="2"/>
+          <text class="m-cut" x="46" y="282" text-anchor="middle">通灵 · 已砍</text>
+        </g>
+
+        <!-- ══ city markers ══ -->
+        <g>
+          <!-- pass-through (drawn first, sits under the named stops) -->
+          <g fill="var(--ink-3)">
+            <circle cx="986" cy="283" r="4"/><circle cx="948" cy="275" r="4"/>
+            <circle cx="821" cy="229" r="4"/><circle cx="524" cy="206" r="4"/>
+            <circle cx="300" cy="332" r="4"/><circle cx="268" cy="252" r="4"/>
+          </g>
+          <text class="m-sub" x="992" y="306" text-anchor="middle">中山</text>
+          <text class="m-sub" x="936" y="260" text-anchor="end">江门</text>
+          <text class="m-sub" x="821" y="252" text-anchor="middle">云浮</text>
+          <text class="m-sub" x="534" y="192" text-anchor="start">贵港</text>
+          <text class="m-sub" x="300" y="352" text-anchor="middle">崇左</text>
+          <text class="m-sub" x="280" y="246" text-anchor="start">大新</text>
+
+          <!-- start / end -->
+          <g transform="translate(1068,279)">
+            <circle r="9" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="3"/>
+            <circle r="3.5" fill="var(--ink)"/>
+          </g>
+          <text class="m-city" x="1074" y="314" text-anchor="middle">深圳</text>
+          <text class="m-sub" x="1074" y="330" text-anchor="middle">起点 / 终点</text>
+
+          <g transform="translate(729,156)"><circle r="9" fill="var(--d1)" stroke="var(--paper-2)" stroke-width="3"/></g>
+          <text class="m-city" x="729" y="134" text-anchor="middle">梧州</text>
+          <text class="m-sub" x="729" y="118" text-anchor="middle">10/1 宿</text>
+
+          <g transform="translate(212,228)"><circle r="9" fill="var(--d2)" stroke="var(--paper-2)" stroke-width="3"/></g>
+          <text class="m-city" x="220" y="256" text-anchor="middle">明仕田园</text>
+          <text class="m-sub" x="220" y="272" text-anchor="middle">10/2 宿</text>
+
+          <g transform="translate(158,264)"><circle r="6.5" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
+          <text class="m-city-sm" x="158" y="292" text-anchor="middle">德天瀑布</text>
+
+          <g transform="translate(100,194)"><circle r="9" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3"/></g>
+          <text class="m-city" x="100" y="174" text-anchor="middle">靖西</text>
+          <text class="m-sub" x="100" y="158" text-anchor="middle">10/3 宿</text>
+
+          <g transform="translate(410,252)"><circle r="9" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3"/></g>
+          <text class="m-city" x="424" y="248" text-anchor="start">南宁</text>
+          <text class="m-sub" x="424" y="264" text-anchor="start">10/4 宿</text>
+        </g>
+
+        <!-- legend -->
+        <g transform="translate(860,368)">
+          <rect x="-14" y="-18" width="290" height="140" rx="10" fill="var(--paper-3)" stroke="var(--rule)"/>
+          <g class="m-seg">
+            <rect x="0" y="0" width="22" height="5" rx="2.5" fill="var(--d1)"/><text x="32" y="6" fill="var(--ink-2)">Day 1　深圳 → 梧州</text>
+            <rect x="0" y="24" width="22" height="5" rx="2.5" fill="var(--d2)"/><text x="32" y="30" fill="var(--ink-2)">Day 2　梧州 → 明仕田园</text>
+            <rect x="0" y="48" width="22" height="5" rx="2.5" fill="var(--d3)"/><text x="32" y="54" fill="var(--ink-2)">Day 3　德天 → 靖西</text>
+            <rect x="0" y="72" width="22" height="5" rx="2.5" fill="var(--d4)"/><text x="32" y="78" fill="var(--ink-2)">Day 4　靖西 → 南宁</text>
+            <rect x="0" y="96" width="22" height="5" rx="2.5" fill="var(--d5)"/><text x="32" y="102" fill="var(--ink-2)">Day 5　南宁 → 深圳（返程）</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <p class="swipe-hint">← 左右滑动查看完整地图 →</p>
+    <figcaption>示意图，非按比例地理投影；城市相对位置与实际经纬度大致对应。返程（紫色虚线）与去程在南宁以东基本重合，图中为便于阅读作了偏移绘制。</figcaption>
+  </figure>
+</section>
+
+<!-- ══════════════════════════════  WHY  ══════════════════════════════ -->
+<section class="wrap" id="why">
+  <p class="eyebrow">取舍</p>
+  <h2>先说砍掉了什么</h2>
+  <p class="lede">原计划是 6 天，你实际只有 4.5 天（10/1 下午出发，10/5 到家）。不砍就会变成特种兵，而你明确说了不想太累。</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h4 style="color:var(--clay)">✕　北海 / 银滩</h4>
+      <p style="margin:0;font-size:15px;color:var(--ink-2)">北海在东南海边，德天和靖西在西北边境，两地相隔约 500km、方向完全相反。原计划用 Day1+Day2 整整两天只为「去海边再折出来」，换来半天银滩。北海是另一条线（涠洲岛值得单独 3 天），这次整条拿掉。</p>
+    </div>
+    <div class="card">
+      <h4 style="color:var(--clay)">✕　通灵大峡谷</h4>
+      <p style="margin:0;font-size:15px;color:var(--ink-2)">门票 90 元，出景区还要另付 10 元接驳车，全程 3–5 小时，是一段很长的无停歇下坡再爬回来。国庆实测排队极长（见下）。它在德天以西 1 小时，去完还得折回来。这次的最低性价比项。</p>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>「11:00 开到离通灵大峡谷 1.5km 的地方，开始慢慢挪，11:50 才进停车场。」</p>
+    <p>「国庆通灵人多吗？」——「挺多的，<strong>排队下楼梯人超多，根本没心情欣赏</strong>。」</p>
+    <cite>小红书用户「叽里咕噜」，2025-10-04 当天实测记录及评论区</cite>
+  </blockquote>
+
+  <div class="callout warn">
+    <span class="tag">另外一条</span>
+    <p>通灵大峡谷对<strong>深圳户籍</strong>有免票政策 —— 但你不是深户，这条用不上，砍掉没有损失。</p>
+  </div>
+
+  <h3>保留并加强</h3>
+  <p style="font-size:15.5px;color:var(--ink-2)">明仕田园的田园峰林 · 德天跨国瀑布的早场 · 靖西的鹅泉与旧州 · 南宁的一顿好饭。四件事，每件都给足时间。</p>
+</section>
+
+<!-- ══════════════════════════════  MAP 2  ══════════════════════════════ -->
+<section class="wrap" id="loop">
+  <p class="eyebrow">桂西南核心</p>
+  <h2>环线放大图</h2>
+  <p class="lede">Day 2 傍晚到 Day 4 中午，全部发生在这张图里。去程走南边经崇左，回程走北边的那靖高速 —— 不走回头路。</p>
+
+  <figure>
+    <div class="fig-scroll">
+      <svg viewBox="0 0 1120 620" role="img" aria-label="桂西南环线放大图：南宁、崇左、大新、明仕田园、德天瀑布、靖西、鹅泉、旧州、渠洋湖">
+        <rect width="1120" height="620" fill="var(--paper-2)"/>
+
+        <!-- vietnam -->
+        <path d="M720 620 C580 540 470 440 350 360 C260 300 150 290 30 308 L30 620Z" fill="var(--brand)" opacity=".07"/>
+        <path d="M720 620 C580 540 470 440 350 360 C260 300 150 290 30 308" stroke="var(--brand)" stroke-width="2" fill="none" stroke-dasharray="4 7" opacity=".6"/>
+        <text class="m-region" x="150" y="470" fill="var(--brand)" opacity=".75">越 南</text>
+        <text class="m-sub" x="470" y="446" fill="var(--brand)" opacity=".8" transform="rotate(-32 470 446)">中越边境线（示意）</text>
+
+        <!-- karst decor -->
+        <g fill="var(--brand)" opacity=".13">
+          <path d="M400 250 L424 208 L448 250Z"/><path d="M448 262 L474 212 L500 262Z"/>
+          <path d="M290 280 L312 244 L334 280Z"/><path d="M640 300 L666 252 L692 300Z"/>
+          <path d="M690 312 L712 276 L734 312Z"/><path d="M150 320 L174 280 L198 320Z"/>
+          <path d="M820 380 L846 334 L872 380Z"/>
+        </g>
+        <!-- terraces -->
+        <g stroke="var(--d4)" stroke-width="2" fill="none" opacity=".5">
+          <path d="M90 300 q54 -12 112 -3"/><path d="M84 312 q58 -13 122 -3"/>
+        </g>
+
+        <!-- ══ routes ══ -->
+        <path d="M1024 346 Q820 470 604 544 Q560 430 538 341 L434 299" stroke="var(--d2)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M434 299 L372 318 L318 336" stroke="var(--d3)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M318 336 Q262 290 230 205" stroke="var(--d3)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M230 205 Q620 206 1024 346" stroke="var(--d4)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- local spurs -->
+        <path d="M230 205 L160 296" stroke="var(--d4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M230 205 L124 166" stroke="var(--d4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M230 205 Q258 140 280 92" stroke="var(--ink-3)" stroke-width="2.5" fill="none" stroke-dasharray="6 6" stroke-linecap="round"/>
+
+        <!-- road name labels -->
+        <text class="m-sub" x="790" y="470" text-anchor="middle" fill="var(--d2)" transform="rotate(-24 790 470)">G7211 南友高速</text>
+        <text class="m-sub" x="392" y="356" text-anchor="middle" fill="var(--d3)">延边公路 S325</text>
+        <text class="m-sub" x="294" y="244" text-anchor="start" fill="var(--d3)">合那高速 · 最美段</text>
+        <text class="m-sub" x="640" y="222" text-anchor="middle" fill="var(--d4)">那靖高速 → 南宁 3.5h</text>
+
+        <!-- ══ markers ══ -->
+        <g transform="translate(1024,346)"><circle r="11" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
+        <text class="m-city" x="1024" y="322" text-anchor="middle">南宁</text>
+        <text class="m-sub" x="1024" y="384" text-anchor="middle">10/4 宿 · 老友粉</text>
+
+        <g transform="translate(604,544)"><circle r="6" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
+        <text class="m-city-sm" x="604" y="572" text-anchor="middle">崇左</text>
+
+        <g transform="translate(538,341)"><circle r="6" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
+        <text class="m-city-sm" x="552" y="336" text-anchor="start">大新</text>
+
+        <g transform="translate(434,299)"><circle r="11" fill="var(--d2)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
+        <text class="m-city" x="434" y="274" text-anchor="middle">明仕田园</text>
+        <text class="m-sub" x="434" y="258" text-anchor="middle">10/2 宿 · 大门免费</text>
+
+        <g transform="translate(372,318)"><circle r="5.5" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
+        <text class="m-sub" x="380" y="306" text-anchor="start">硕龙镇</text>
+
+        <g transform="translate(318,336)">
+          <circle r="13" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3.5"/>
+          <path d="M-4 -5 h8 v10 h-8Z" fill="var(--paper-2)" opacity=".9"/>
+        </g>
+        <text class="m-city" x="318" y="372" text-anchor="middle">德天跨国瀑布</text>
+        <text class="m-sub" x="318" y="388" text-anchor="middle">10/3 早场 7:30 进场</text>
+
+        <g transform="translate(230,205)"><circle r="11" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
+        <text class="m-city" x="230" y="184" text-anchor="middle">靖西</text>
+        <text class="m-sub" x="230" y="168" text-anchor="middle">10/3 宿</text>
+
+        <g transform="translate(160,296)"><circle r="7" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
+        <text class="m-city-sm" x="150" y="322" text-anchor="middle">鹅泉</text>
+        <text class="m-sub" x="150" y="338" text-anchor="middle">18:00 后免票</text>
+
+        <g transform="translate(124,166)"><circle r="7" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
+        <text class="m-city-sm" x="114" y="148" text-anchor="middle">旧州古镇</text>
+
+        <g transform="translate(280,92)">
+          <circle r="7" fill="var(--paper-2)" stroke="var(--d4)" stroke-width="2.5" stroke-dasharray="3.4 3"/>
+          <circle r="2.5" fill="var(--d4)"/>
+        </g>
+        <text class="m-city-sm" x="296" y="88" text-anchor="start">渠洋湖</text>
+        <text class="m-sub" x="296" y="104" text-anchor="start">可选 · 导航「岜旗观景亭」</text>
+
+        <!-- cut -->
+        <g opacity=".8">
+          <circle cx="76" cy="124" r="7" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="3 3"/>
+          <line x1="68" y1="116" x2="84" y2="132" stroke="var(--ink-3)" stroke-width="2"/>
+          <text class="m-cut" x="76" y="106" text-anchor="middle">通灵 · 已砍</text>
+        </g>
+
+        <!-- legend -->
+        <g transform="translate(790,540)">
+          <rect x="-16" y="-24" width="330" height="62" rx="10" fill="var(--paper-3)" stroke="var(--rule)"/>
+          <g class="m-seg">
+            <circle cx="0" cy="-4" r="7" fill="var(--ink-3)"/><text x="16" y="0" fill="var(--ink-2)">途经不停</text>
+            <circle cx="112" cy="-4" r="9" fill="var(--d2)"/><text x="130" y="0" fill="var(--ink-2)">过夜</text>
+            <circle cx="196" cy="-4" r="7" fill="var(--d4)"/><text x="212" y="0" fill="var(--ink-2)">景点</text>
+            <line x1="0" y1="22" x2="24" y2="22" stroke="var(--ink-3)" stroke-width="2.5" stroke-dasharray="6 6"/>
+            <text x="34" y="26" fill="var(--ink-2)">可选绕行</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <p class="swipe-hint">← 左右滑动查看完整地图 →</p>
+    <figcaption>示意图。德天瀑布本身就骑在中越边境线上，图中边境走向为示意画法。硕龙镇与德天的实际间距约 10 分钟车程，为标注清晰作了放大。</figcaption>
+  </figure>
+</section>
+
+<!-- ══════════════════════════════  DAYS  ══════════════════════════════ -->
+<section class="wrap" id="days">
+  <p class="eyebrow">逐日</p>
+  <h2>五天怎么走</h2>
+  <p class="lede">每天只安排必要的事。最紧的是 Day 3 早上 —— 那是全程唯一一场必须打赢的仗。</p>
+
+  <!-- DAY 1 -->
+  <article class="day" style="--tl-c:var(--d1)">
+    <div class="day-head">
+      <div class="day-badge" style="background:var(--d1)"><small>DAY</small><b>1</b></div>
+      <div class="day-title">
+        <h3>深圳 → 梧州</h3>
+        <div class="day-meta"><b>10/1 周四</b>　·　约 390km　·　正常 4.5h，国庆按 <b>6h</b> 算　·　宿 <b>梧州</b></div>
+      </div>
+    </div>
+    <div class="day-body">
+      <ul class="tl">
+        <li><time>16:30</time><b>深圳出发</b><span>避开上午最堵的窗口。走深中通道 → 中山 → 江门 → 开阳高速 → 云浮 → G80 广昆，全程不进广州绕城。</span></li>
+        <li><time>19:00</time><b>云浮一带服务区吃饭</b><span>这段是广东侧最后的堵点，吃完饭往往就顺了。</span></li>
+        <li><time>22:30</time><b>抵达梧州</b><span>住市区。运气好（路上顺）可以继续开 1 小时到玉林，Day 2 会轻松半小时。</span></li>
+        <li><time>23:00</time><b>夜宵</b><span>纸包鸡、炒田螺。第二天早餐留给冰泉豆浆。</span></li>
+      </ul>
+      <div class="callout">
+        <span class="tag">为什么是下午出发</span>
+        <p>不是将就你的时间 —— <strong>下午出发本来就比上午好</strong>。9/30 晚上那波车流通常要到 10/1 下午才从云浮、肇庆一带化开，上午出门正好一头扎进去。详见下面的「避堵」一节。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- DAY 2 -->
+  <article class="day" style="--tl-c:var(--d2)">
+    <div class="day-head">
+      <div class="day-badge" style="background:var(--d2)"><small>DAY</small><b>2</b></div>
+      <div class="day-title">
+        <h3>梧州 → 南宁 → 崇左大新 → 明仕田园</h3>
+        <div class="day-meta"><b>10/2 周五</b>　·　约 450km　·　<b>5.5h</b>　·　宿 <b>明仕田园民宿</b></div>
+      </div>
+    </div>
+    <div class="day-body">
+      <ul class="tl">
+        <li><time>08:00</time><b>梧州出发</b><span>G80 广昆一路向西，过贵港、南宁。</span></li>
+        <li><time>12:00</time><b>南宁午饭</b><span>顺路嗦一碗老友粉。南宁到明仕这段没什么吃的，在这里吃饱。</span></li>
+        <li><time>12:40</time><b>南宁 → 崇左 → 大新</b><span>G7211 南友高速转大新方向，约 2.5h。</span></li>
+        <li><time>15:00</time><b>抵达明仕田园，入住</b><span>大门免费。放下行李先歇一会儿。</span></li>
+        <li><time>16:00</time><b>十里画廊 + 幸福桥</b><span>这两处<strong>停车免费</strong>，是明仕真正的精华。租辆电动车沿田埂骑，自己找机位，比景区里那段强。</span></li>
+        <li><time>18:20</time><b>等一场日落</b><span>住这里的全部意义。峰林剪影 + 稻田，10 月正是稻黄期。</span></li>
+        <li><time>19:30</time><b>民宿吃晚饭</b><span>别去硕龙街 —— 实测「比德天景区还贵」。</span></li>
+        <li><time>21:30</time><b>早睡</b><span>明早 5:45 起。今晚把德天的 80 元门票在网上买好。</span></li>
+      </ul>
+      <div class="callout">
+        <span class="tag">住哪的权衡</span>
+        <p>住 <strong>明仕田园</strong>：民宿更便宜、环境更好、有日落，代价是明早要开 1 小时去德天。<br>
+        住 <strong>硕龙镇 / 德天村</strong>：离德天只有 10–15 分钟，明早能多睡 45 分钟，但要摸黑开一段山路过去，住宿环境一般。<br>
+        <strong>我的建议是住明仕</strong> —— 早上那 1 小时山路在国庆清晨反而是彩蛋，实测有人拍到晨雾、朝霞和彩虹。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- DAY 3 -->
+  <article class="day" style="--tl-c:var(--d3)">
+    <div class="day-head">
+      <div class="day-badge" style="background:var(--d3)"><small>DAY</small><b>3</b></div>
+      <div class="day-title">
+        <h3>明仕 → 德天瀑布（早场）→ 靖西</h3>
+        <div class="day-meta"><b>10/3 周六</b>　·　约 140km　·　<b>3h</b>　·　宿 <b>靖西市区</b></div>
+      </div>
+    </div>
+    <div class="day-body">
+      <ul class="tl">
+        <li><time>05:45</time><b>起床</b><span>全程唯一一次早起。值得。</span></li>
+        <li><time>06:00</time><b>出发去德天</b><span>走<strong>延边公路（S325）</strong>，不走崇左一级公路 —— 后者有个硕龙收费站，平时每次 10 元。延边公路紧贴中越边境线，路也更好看。</span></li>
+        <li><time>07:00</time><b>到德天景区</b><span>过硕龙镇牌坊后<strong>走左边新路</strong>，避开镇上的会车堵点（当地人原话，那是往年最堵路段）。</span></li>
+        <li><time>07:30</time><b>第一波进场</b><span>景区 08:00 开放，7:30 前到检票口排队。具体停哪、买哪种票，见下面「德天攻坚战」。</span></li>
+        <li><time>07:40</time><b>直奔稻田咖啡屋</b><span>最出片的机位，<strong>不用买咖啡也能进</strong>。栈道上有人守着是限流，不是查消费。晚一点就排长队。</span></li>
+        <li><time>08:30</time><b>沿步道看瀑布</b><span>几个观景台各有角度，越往出口方向的观景台位置越高。836 号界碑免费打卡。景区不大，从容走完约 2 小时。</span></li>
+        <li><time>09:30</time><b>出景区</b><span>此时门口进场的车队通常已排起数公里 —— 你正好逆着走。</span></li>
+        <li><time>10:30</time><b>德天 → 靖西</b><span>走<strong>合那高速大新–靖西段</strong>，被本地人叫「广西最美高速」，喀斯特峰林加晨雾，沿途观景台随时可停。约 1.5–2h。</span></li>
+        <li><time>12:30</time><b>靖西午饭 + 入住</b><span>睡个午觉。这半天是给 Day 2、Day 3 的早起补的。</span></li>
+        <li><time>17:40</time><b>鹅泉</b><span><strong>18:00 后免票入园</strong>。十五孔桥、倒影、村子的炊烟，傍晚的光最好。</span></li>
+        <li><time>19:30</time><b>靖西晚饭</b><span>牛肉火锅或鸭脚煲。这是全程美食最值得的一顿，见「美食」一节。</span></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- DAY 4 -->
+  <article class="day" style="--tl-c:var(--d4)">
+    <div class="day-head">
+      <div class="day-badge" style="background:var(--d4)"><small>DAY</small><b>4</b></div>
+      <div class="day-title">
+        <h3>靖西 → 南宁</h3>
+        <div class="day-meta"><b>10/4 周日</b>　·　约 230km　·　<b>3.5h</b>　·　宿 <b>南宁市区</b></div>
+      </div>
+    </div>
+    <div class="day-body">
+      <ul class="tl">
+        <li><time>08:30</time><b>睡到自然醒</b><span>全程最松的一天。想看鹅泉晨雾的话 07:00 前再去一次，同样免票。</span></li>
+        <li><time>09:30</time><b>旧州古镇</b><span>离市区 8km。绣球一条街，30 元可以自己做一个绣球带走，是这趟唯一的手作体验。</span></li>
+        <li><time>11:30</time><b>靖西市区午饭 + 采购</b><span>带点酸嘢、大香糯回去。</span></li>
+        <li><time>13:00</time><b>出发去南宁</b><span>走那靖高速，不走回头路。约 3.5h。</span></li>
+        <li><time>16:30</time><b>抵达南宁，入住</b><span>放行李，歇脚。</span></li>
+        <li><time>17:30</time><b>三街两巷</b><span>老街区随便逛逛，不用赶。</span></li>
+        <li><time>19:00</time><b>南宁的一顿好饭</b><span>柠檬鸭、酸笋田螺、卷筒粉。夜市想去的话建政路比中山路实在。</span></li>
+      </ul>
+      <div class="callout good">
+        <span class="tag">可选加餐</span>
+        <p>时间宽裕、且不介意多开 1 小时的话，出发前可以先north上绕<strong>渠洋湖</strong>（导航定位「<strong>岜旗观景亭</strong>」，爬小山到观景台就够，游船可以省掉）。<br>
+        <strong>巴泽梯田</strong> 10 月正是金黄期且免费，但最后 4–5km 山道极窄只容一车、弯多视线差 —— 新手和低底盘轿车别去。</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- DAY 5 -->
+  <article class="day" style="--tl-c:var(--d5)">
+    <div class="day-head">
+      <div class="day-badge" style="background:var(--d5)"><small>DAY</small><b>5</b></div>
+      <div class="day-title">
+        <h3>南宁 → 深圳</h3>
+        <div class="day-meta"><b>10/5 周一</b>　·　约 600km　·　<b>7h</b>　·　到家</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <ul class="tl">
+        <li><time>07:00</time><b>南宁出发</b><span>早走。10/5 是返程高峰前的最后一个好窗口。</span></li>
+        <li><time>10:00</time><b>贵港/梧州段服务区休整</b><span>全程安排两次休息，别硬撑。</span></li>
+        <li><time>15:00</time><b>到深圳</b><span>下午到家，晚上还能收拾行李、好好睡一觉，第二天不至于假期后遗症。</span></li>
+      </ul>
+      <div class="callout good">
+        <span class="tag">这个决定很关键</span>
+        <p>你选 <strong>10/5 回</strong>而不是 10/6、10/7，是整趟行程最大的一个避堵红利。返程高峰集中在 <strong>10/6–10/7，其中 10/6 最堵</strong>。别改这一天。</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ══════════════════════════════  TRAFFIC  ══════════════════════════════ -->
+<section class="wrap" id="traffic">
+  <p class="eyebrow">避堵</p>
+  <h2>时段比路线重要</h2>
+  <p class="lede">2026 国庆假期 10/1（周四）至 10/7（周三），共 7 天。7 座及以下小客车高速免费时段为 <strong>10/1 00:00 – 10/7 24:00</strong>，你全程不花过路费。</p>
+
+  <h3>七天拥堵日历</h3>
+  <div class="card" style="padding:20px 18px">
+    <div class="strip-head">
+      <div>&nbsp;</div>
+      <div>10/1<br><small class="muted">四</small></div><div>10/2<br><small class="muted">五</small></div>
+      <div>10/3<br><small class="muted">六</small></div><div>10/4<br><small class="muted">日</small></div>
+      <div>10/5<br><small class="muted">一</small></div><div>10/6<br><small class="muted">二</small></div>
+      <div>10/7<br><small class="muted">三</small></div>
+    </div>
+    <div class="strip" style="margin-bottom:8px">
+      <div class="rl">去程</div>
+      <div class="cell lv4 you">严重<span class="dt">你出发</span></div>
+      <div class="cell lv3">拥堵<span class="dt">上午</span></div>
+      <div class="cell lv2">缓行</div>
+      <div class="cell lv1">畅通</div>
+      <div class="cell lv1">畅通</div>
+      <div class="cell lv1">畅通</div>
+      <div class="cell lv1">畅通</div>
+    </div>
+    <div class="strip">
+      <div class="rl">返程</div>
+      <div class="cell lv1">畅通</div>
+      <div class="cell lv1">畅通</div>
+      <div class="cell lv2">缓行</div>
+      <div class="cell lv2">缓行</div>
+      <div class="cell lv2 you">缓行<span class="dt">你返程</span></div>
+      <div class="cell lv4">严重</div>
+      <div class="cell lv3">拥堵</div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--good)"></i>畅通</span>
+      <span><i style="background:var(--warning)"></i>缓行</span>
+      <span><i style="background:var(--serious)"></i>拥堵</span>
+      <span><i style="background:var(--critical)"></i>严重拥堵</span>
+      <span class="muted">粗框 = 你的行程日</span>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--ink-3);margin-top:10px">拥堵等级为基于历年国庆规律与交管部门高峰预测的估计，非实时数据。出发前请以高德/百度实时路况为准。10/5 下午起返程车流会逐渐增加，所以建议早上 7 点就走。</p>
+
+  <h3>10/1 当天，几点出门</h3>
+  <div class="card">
+    <div class="win">
+      <div class="win-row"><span class="t">02:00–05:00</span><div class="win-bar lv3">赌博 —— 有人一路通畅，有人开了 24 小时才到</div></div>
+      <div class="win-row"><span class="t">06:00–10:00</span><div class="win-bar lv4">最差 —— 正面撞上 9/30 晚那波滞留车流</div></div>
+      <div class="win-row"><span class="t">10:00–15:00</span><div class="win-bar lv3">差 —— 云浮、肇庆一带仍未化开</div></div>
+      <div class="win-row pick"><span class="t">15:00–18:00</span><div class="win-bar lv2">好转 ← <b>推荐窗口，16:30 前后出发</b></div></div>
+      <div class="win-row"><span class="t">18:00–22:00</span><div class="win-bar lv1">最顺 —— 但到梧州就半夜了</div></div>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>「10.1 下午五六点出发吧，你早上出发的话估计<strong>碰上 30 号晚上走的那波车流在云浮或者肇庆还没有缓解</strong>。」</p>
+    <p>「一号晚上或者 2 号一早最稳妥，然后假期最后一天 7 号回，<strong>千万不要 6 号回，6 号是最堵的</strong>。」</p>
+    <cite>小红书「国庆深圳自驾广西」帖下高赞回复，2026-09-15 发布 —— 提问者的情况与你几乎一致</cite>
+  </blockquote>
+
+  <h3>走哪条</h3>
+  <div class="grid g2">
+    <div class="card" style="border-left:4px solid var(--brand)">
+      <h4>南线（推荐，16:30 后出发用）</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">深中通道 → 中山 → 江门 → 开阳高速 → 云浮 → G80 广昆 → 梧州。<br><strong>完全不进广州绕城。</strong>堵点是深中通道本身和云浮/肇庆一带，但下午晚些时候这两处通常已经化开。</p>
+    </div>
+    <div class="card">
+      <h4>北线（13:00–15:00 出发才用）</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">南沙大桥 → G4W3 广澳 → 广州绕城南环 → G80 广昆。<br>走<strong>南沙大桥，不走虎门大桥</strong> —— 老桥更容易堵。这个时段深中通道正被上午那波车压着。</p>
+    </div>
+  </div>
+
+  <h3>国道备选（真堵死了才下高速）</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>堵在哪</th><th>下高速走</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td><b>肇庆 – 封开 – 梧州</b></td><td class="num"><b>G321 国道</b></td><td>基本与广昆高速平行，沿西江走，路况不错，风景也好</td></tr>
+        <tr><td><b>梧州 – 南宁</b></td><td class="num"><b>G324 国道</b></td><td>经藤县、桂平、贵港到南宁</td></tr>
+        <tr><td><b>梧州往后整段</b></td><td class="num">改走南线高速</td><td>G65 包茂南下玉林，再接 G72 泉南到南宁，车流分散很多</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout warn">
+    <span class="tag">别搞反了</span>
+    <p>不要为了「走国道」而走国道。1600km 全程国道会把时间翻倍，人更累。<strong>国道只用来绕开具体的死点</strong> —— 导航显示前方红了 20 公里、预计 2 小时，才下去。</p>
+  </div>
+
+  <h3>广西境内这两条一定要走</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>合那高速 · 大新–靖西段</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">被本地人称为「广西最美高速」。喀斯特峰林、稻田、晨雾，沿途观景台可随时停车。Day 3 从德天去靖西正好走到。</p>
+    </div>
+    <div class="card">
+      <h4>延边公路 S325 · 明仕↔德天</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">走崇左一级公路要过<strong>硕龙收费站，平时每次 10 元</strong>（来回 20）。延边公路紧贴中越边境线，既好看又绕开收费站。国庆免费政策通常覆盖这类收费站，但这条路本身就值得走。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════  DETIAN  ══════════════════════════════ -->
+<section class="wrap" id="detian">
+  <p class="eyebrow">全程唯一的硬仗</p>
+  <h2>德天瀑布攻坚</h2>
+  <p class="lede">这是整趟行程唯一会真正堵的地方，而且堵的不是高速，是景区门口那几公里窄路。打法只有一个字：早。</p>
+
+  <blockquote>
+    <p>5 点半前起床，6 点出门，7 点到德天瀑布停车场；7:00–7:30 排队等待检票，7:30 进场，9:30 出景区。</p>
+    <p>「我们 9:30 出景区的时候，<strong>在景区门口排队的车已经至少排了 5、6 公里，估计至少得等 3 小时</strong>。」</p>
+    <cite>小红书用户「叽里咕噜」，2025-10-04 国庆当天实测</cite>
+  </blockquote>
+
+  <h3>停车与买票：按到达时间决定</h3>
+  <figure>
+    <div class="fig-scroll">
+      <svg viewBox="0 0 1000 400" role="img" aria-label="德天瀑布停车与购票决策图">
+        <rect width="1000" height="400" fill="var(--paper-2)"/>
+        <!-- root -->
+        <rect x="360" y="20" width="280" height="56" rx="12" fill="var(--paper-3)" stroke="var(--rule-2)" stroke-width="2"/>
+        <text x="500" y="44" text-anchor="middle" font="700 16px var(--font-sans)" fill="var(--ink)" style="font:700 16px var(--font-sans)">几点到景区门口？</text>
+        <text x="500" y="64" text-anchor="middle" style="font:500 12.5px var(--font-sans)" fill="var(--ink-3)">这是唯一需要判断的事</text>
+
+        <!-- branch lines -->
+        <path d="M430 76 L430 108 L190 108 L190 140" stroke="var(--good)" stroke-width="3" fill="none"/>
+        <path d="M500 76 L500 140" stroke="var(--warning)" stroke-width="3" fill="none"/>
+        <path d="M570 76 L570 108 L810 108 L810 140" stroke="var(--serious)" stroke-width="3" fill="none"/>
+
+        <!-- A -->
+        <rect x="40" y="140" width="300" height="212" rx="14" fill="var(--d2-soft)" stroke="var(--d2)" stroke-width="2"/>
+        <text x="190" y="170" text-anchor="middle" style="font:800 17px var(--font-sans)" fill="var(--d2)">7:00 前到</text>
+        <text x="190" y="196" text-anchor="middle" style="font:700 14px var(--font-sans)" fill="var(--ink)">自驾进核心区</text>
+        <text x="64" y="222" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">导航「越姆娘好吃餐厅」</text>
+        <text x="64" y="244" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">路过游客中心<tspan font-weight="700">别进</tspan>，走左岔路</text>
+        <text x="64" y="266" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">停村民停车位 · 30 元不限时</text>
+        <text x="64" y="288" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">步行 2–3 分钟到检票口</text>
+        <text x="64" y="310" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">只买 <tspan font-weight="700">80 元</tspan> 门票</text>
+        <rect x="64" y="322" width="188" height="22" rx="6" fill="var(--d2)" opacity=".18"/>
+        <text x="72" y="338" style="font:700 12.5px var(--font-sans)" fill="var(--d2)">省下 35 元/人 接驳车</text>
+
+        <!-- B -->
+        <rect x="360" y="140" width="280" height="212" rx="14" fill="var(--d4-soft)" stroke="var(--d4)" stroke-width="2"/>
+        <text x="500" y="170" text-anchor="middle" style="font:800 17px var(--font-sans)" fill="var(--d4)">7:00–8:00 到</text>
+        <text x="500" y="196" text-anchor="middle" style="font:700 14px var(--font-sans)" fill="var(--ink)">还可以试，但别恋战</text>
+        <text x="382" y="222" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">照上面走，但当地人提醒：</text>
+        <text x="382" y="244" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">越姆娘那个停车场<tspan font-weight="700">只能停</tspan></text>
+        <text x="382" y="264" style="font:500 13px var(--font-sans)" fill="var(--ink-2)"><tspan font-weight="700">十来辆</tspan>，员工车都占了</text>
+        <text x="382" y="290" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">德天村有阿姨招呼停车</text>
+        <text x="382" y="316" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">位置找不到就立刻退回</text>
+        <text x="382" y="338" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">游客中心，改走右边方案</text>
+
+        <!-- C -->
+        <rect x="660" y="140" width="300" height="212" rx="14" fill="var(--d3-soft)" stroke="var(--d3)" stroke-width="2"/>
+        <text x="810" y="170" text-anchor="middle" style="font:800 17px var(--font-sans)" fill="var(--d3)">8:00 后到</text>
+        <text x="810" y="196" text-anchor="middle" style="font:700 14px var(--font-sans)" fill="var(--ink)">别赌窄路，走官方</text>
+        <text x="684" y="222" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">停游客中心停车场</text>
+        <text x="684" y="244" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">买 <tspan font-weight="700">115 元</tspan> 门票+观光车联票</text>
+        <text x="684" y="266" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">坐接驳大巴约 10km 进核心区</text>
+        <text x="684" y="288" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">多花 35 元，换确定性</text>
+        <rect x="684" y="302" width="248" height="42" rx="6" fill="var(--d3)" opacity=".13"/>
+        <text x="692" y="318" style="font:700 12.5px var(--font-sans)" fill="var(--d3)">当地人原话：去游客中心不堵，</text>
+        <text x="692" y="336" style="font:700 12.5px var(--font-sans)" fill="var(--d3)">自驾进核心景区才容易堵</text>
+
+        <!-- footer note -->
+        <rect x="40" y="366" width="920" height="26" rx="8" fill="var(--clay)" opacity=".12"/>
+        <text x="500" y="384" text-anchor="middle" style="font:700 13px var(--font-sans)" fill="var(--clay)">三种情况都一样：过硕龙镇牌坊后走左边新路，避开镇上会车堵点</text>
+      </svg>
+    </div>
+    <p class="swipe-hint">← 左右滑动查看完整图 →</p>
+    <figcaption>「越姆娘好吃餐厅」在部分攻略里也被写作「赵母娘好吃餐厅」，指同一处。景区内部路况 2026 年 7 月实测仍在断续修路，局部单车道，低底盘轿车慎入。</figcaption>
+  </figure>
+
+  <h3>费用清单</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>项目</th><th class="num">价格</th><th>要不要买</th></tr></thead>
+      <tbody>
+        <tr><td><b>大门票</b></td><td class="num">¥80 / 人</td><td>要。提前一天网上买，当天美团也能买</td></tr>
+        <tr><td><b>门票 + 观光车联票</b></td><td class="num">¥115 / 人</td><td>只有停游客中心时才需要</td></tr>
+        <tr><td><b>停车</b></td><td class="num">¥30 / 车</td><td>不限时</td></tr>
+        <tr><td>竹筏</td><td class="num">¥48 / 人</td><td>看心情。水位高时会停开，现场买票</td></tr>
+        <tr><td>魔毯 + 滑道</td><td class="num">¥88 / 人</td><td>可不买</td></tr>
+        <tr><td>夜场「奇妙·夜德天」</td><td class="num">¥168 / 人</td><td>本行程时间上排不下</td></tr>
+        <tr><td>836 号界碑</td><td class="num">免费</td><td>必打卡</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:13px;color:var(--ink-3);margin-top:10px">景区开放 08:00–18:30。实际步道不大，从容走完 40 分钟到 2 小时。靠近水流处水汽极大，会被淋成落汤鸡 —— 带伞或帽子。</p>
+</section>
+
+<!-- ══════════════════════════════  SPOTS  ══════════════════════════════ -->
+<section class="wrap" id="spots">
+  <p class="eyebrow">景点</p>
+  <h2>去哪、花多少、避什么坑</h2>
+
+  <div class="grid g2">
+
+    <div class="spot">
+      <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+        <path d="M2 32 L12 14 Q14 10 16 14 L24 28 L30 18 Q32 14 34 18 L44 32Z" fill="var(--d2)" opacity=".35"/>
+        <path d="M2 32 q10 -4 20 -2 t22 2" stroke="var(--d4)" stroke-width="2" fill="none"/>
+      </svg>
+      <h4>明仕田园 <span class="price">大门免费</span></h4>
+      <ul>
+        <li><b>十里画廊 + 幸福桥</b> —— 停车免费，明仕真正的精华</li>
+        <li><b>骑电动车沿田埂</b>，自己找机位，比景区那段强</li>
+        <li>竹筏 ¥120：评价两极，多人说圈起来那段太小不划算</li>
+        <li>鱼鳞坝：停车 ¥10，主要是小孩玩水，不带娃可跳过</li>
+        <li>顺路：<b>峒那屿湾</b>、<b>蓝洞咖啡</b>（在明仕↔德天路上）</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+        <path d="M6 4 h12 q3 20 -2 24 h-9 q-4 -6 -1 -24Z" fill="var(--d3)" opacity=".45"/>
+        <path d="M20 6 h10 q2 18 -2 22 h-8 q-3 -6 0 -22Z" fill="var(--d3)" opacity=".3"/>
+        <ellipse cx="19" cy="30" rx="17" ry="3.5" fill="var(--d2)" opacity=".3"/>
+        <path d="M34 8 l4 -4 l4 4 l-4 4Z" fill="var(--d4)" opacity=".6"/>
+      </svg>
+      <h4>德天跨国瀑布 <span class="price">¥80 + 停车 ¥30</span></h4>
+      <ul>
+        <li><b>7:30 前进场</b>，这是唯一重要的事</li>
+        <li><b>稻田咖啡屋</b>：不用买咖啡也能进，进场后直奔</li>
+        <li>836 号界碑免费打卡</li>
+        <li>水汽极大，靠近水流会被淋湿 —— 带伞或帽子</li>
+        <li>别在硕龙街吃饭，实测比景区还贵</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+        <ellipse cx="23" cy="24" rx="20" ry="7" fill="var(--d3)" opacity=".25"/>
+        <path d="M4 20 q6 -8 12 0 t12 0 t12 0" stroke="var(--d3)" stroke-width="2" fill="none" opacity=".7"/>
+        <path d="M8 14 h30 M10 14 v-5 M18 14 v-5 M28 14 v-5 M36 14 v-5" stroke="var(--clay)" stroke-width="2" fill="none" opacity=".7"/>
+      </svg>
+      <h4>鹅泉 <span class="price">¥30–48 · 早晚免票</span></h4>
+      <ul>
+        <li>5/1–10/31 开放 <b>07:00–19:30</b></li>
+        <li><b>7:00 前 / 18:00 后可免费入园</b> —— 正好也是光线最好的时候</li>
+        <li>十五孔桥 + 倒影 + 村子炊烟</li>
+        <li>离靖西市区约 10–20km</li>
+      </ul>
+    </div>
+
+    <div class="spot">
+      <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+        <circle cx="23" cy="17" r="11" fill="var(--d5)" opacity=".3"/>
+        <path d="M23 6 v22 M12 17 h22 M15 9 l16 16 M31 9 L15 25" stroke="var(--clay)" stroke-width="1.6" opacity=".7"/>
+        <path d="M23 28 q-3 5 -6 6 M23 28 q3 5 6 6" stroke="var(--clay)" stroke-width="1.6" fill="none" opacity=".7"/>
+      </svg>
+      <h4>旧州古镇 <span class="price">免费 · 绣球 DIY ¥30</span></h4>
+      <ul>
+        <li>离靖西市区 8km，绣球一条街</li>
+        <li>30 元可以自己做一个绣球带走 —— 这趟唯一的手作体验</li>
+        <li>配合鹅泉，半个上午足够</li>
+      </ul>
+    </div>
+
+    <div class="spot" style="opacity:.92">
+      <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+        <path d="M2 26 q12 -6 22 -3 t20 -1" stroke="var(--d3)" stroke-width="2.5" fill="none" opacity=".6"/>
+        <path d="M6 14 L16 4 L26 14Z" fill="var(--brand)" opacity=".28"/>
+        <path d="M24 16 L32 8 L40 16Z" fill="var(--brand)" opacity=".2"/>
+      </svg>
+      <h4>渠洋湖 <span class="price">免费 · 可选</span></h4>
+      <ul>
+        <li>导航定位 <b>「岜旗观景亭」</b></li>
+        <li>爬小山到观景台就够了，<b>游船可以省掉</b></li>
+        <li>在靖西北边约 30km，是绕路 —— 时间紧就砍</li>
+      </ul>
+    </div>
+
+    <div class="spot" style="opacity:.92">
+      <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+        <g stroke="var(--d4)" stroke-width="2.4" fill="none">
+          <path d="M3 10 q14 -5 28 -2 t12 1"/><path d="M3 17 q14 -5 28 -2 t12 1"/>
+          <path d="M3 24 q14 -5 28 -2 t12 1"/><path d="M3 31 q14 -5 28 -2 t12 1"/>
+        </g>
+      </svg>
+      <h4>巴泽梯田 <span class="price">免费 · 看车况</span></h4>
+      <ul>
+        <li>9–10 月正是金黄期，10 月去正好</li>
+        <li><b>最后 4–5km 山道极窄只容一车</b>，弯多、视线差</li>
+        <li>新手和低底盘轿车别去</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════  FOOD  ══════════════════════════════ -->
+<section class="wrap" id="food">
+  <p class="eyebrow">美食</p>
+  <h2>按城市吃</h2>
+  <p class="lede">靖西是这趟的美食重点，别只在景区凑合。下面带 ★ 的是小红书本地食客反复点名的。</p>
+
+  <div class="food-city">
+    <h4><span class="dot" style="background:var(--d1)"></span>梧州　<small class="muted" style="font-weight:400">10/1 夜宵 · 10/2 早餐</small></h4>
+    <div class="food">
+      <div class="food-item"><span class="star">—</span><div><b>纸包鸡</b><p>梧州招牌，到得晚就直接找一家还开着的。</p></div></div>
+      <div class="food-item"><span class="star">—</span><div><b>冰泉豆浆</b><p>留给第二天早餐，配油条。</p></div></div>
+      <div class="food-item"><span class="star">—</span><div><b>龟苓膏 · 炒田螺</b><p>夜宵搭配。</p></div></div>
+    </div>
+  </div>
+
+  <div class="food-city">
+    <h4><span class="dot" style="background:var(--d2)"></span>明仕 / 德天　<small class="muted" style="font-weight:400">10/2–10/3</small></h4>
+    <div class="food">
+      <div class="food-item"><span class="star">★</span><div><b>民宿自家菜</b><p>最划算，也最省事。明仕的民宿普遍管饭。</p></div></div>
+      <div class="food-item"><span class="star">—</span><div><b>德天景区路上的土菜馆</b><p>比景区内和硕龙街都实在。</p></div></div>
+      <div class="food-item"><span class="star">✕</span><div><b>硕龙街</b><p>实测「很多比德天景区还贵」，果断避开。</p></div></div>
+    </div>
+  </div>
+
+  <div class="food-city">
+    <h4><span class="dot" style="background:var(--d3)"></span>靖西　<small class="muted" style="font-weight:400">10/3 晚 – 10/4 中午 · 本趟重点</small></h4>
+    <div class="food">
+      <div class="food-item"><span class="star">★★★</span><div><b>靖西德保鲜牛肉馆</b><p>牛肉火锅，「新鲜便宜又好吃」，多篇强烈推荐。首选这家。</p></div></div>
+      <div class="food-item"><span class="star">★★★</span><div><b>雾屿酒馆 的鸭脚煲</b><p>被称为「靖西第一好吃的鸭脚煲」。现炸腐竹、虎皮鹌鹑蛋、粉芋头，浓汤底越煮越好。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>川妹子火锅</b><p>本地人公认靖西最好的火锅，胸口油切得很薄。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>阿拉汀</b><p>是 KTV 但菜好吃。酸辣面（据说是靖西最好吃的）、手撕包菜。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>经典咖啡（小碗菜）</b><p>老牌餐厅，虾粥推荐，粥底绵密还放芋头丁。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>古镇的齐齐哈尔烤肉</b><p>旧州那边，平价，大丰收（隐藏菜）是一大条排骨。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>靖西米饺</b><p>非遗。本地粳米磨浆蒸皮，包猪肉木耳马蹄，放凉吃，特别 Q 弹。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>大香糯 · 酸嘢</b><p>酸嘢是腌芒果木瓜萝卜，酸甜辣开胃。大香糯可以买点带回去。</p></div></div>
+    </div>
+  </div>
+
+  <div class="food-city">
+    <h4><span class="dot" style="background:var(--d4)"></span>南宁　<small class="muted" style="font-weight:400">10/4 晚</small></h4>
+    <div class="food">
+      <div class="food-item"><span class="star">★★</span><div><b>老友粉</b><p>舒记、复记都是常年被点名的老店。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>雷记饭店 · 广西菜（埌西店）</b><p>鹅特别好吃，小红书上被反复点名。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>柠檬鸭 · 酸笋田螺 · 卷筒粉</b><p>南宁三件套。</p></div></div>
+      <div class="food-item"><span class="star">—</span><div><b>夜市去建政路</b><p>中山路现在游客店偏多，建政路更实在。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════  FLEX  ══════════════════════════════ -->
+<section class="wrap" id="flex">
+  <p class="eyebrow">备选</p>
+  <h2>如果情况变了</h2>
+
+  <div class="grid g3">
+    <div class="card">
+      <h4>想 10/5 更早到家</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">10/4 从靖西出发后别停南宁，多开 1.5h 到<b>贵港或玉林</b>住。10/5 只剩 5.5h，下午 1 点就到深圳。代价是丢掉南宁那顿饭。</p>
+    </div>
+    <div class="card">
+      <h4>想早上多睡 45 分钟</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">10/2 玩完明仕后再开 40 分钟，住<b>硕龙镇 / 德天村</b>。10/3 早上 6:45 起就行。代价是错过明仕日落、要摸黑开山路、住宿环境一般。</p>
+    </div>
+    <div class="card">
+      <h4>10/1 实在走不掉</h4>
+      <p style="font-size:14.5px;color:var(--ink-2);margin:0">改成 10/1 晚上 21 点后出发，开到<b>云浮或肇庆</b>住一晚，10/2 一早继续 —— 那波车流基本散了。后面每天顺延，德天早场不受影响。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════  CHECKLIST  ══════════════════════════════ -->
+<section class="wrap" id="pack">
+  <p class="eyebrow">出发前</p>
+  <h2>清单</h2>
+
+  <div class="grid g2">
+    <div>
+      <h3 style="margin-top:0">必带</h3>
+      <ul class="check">
+        <li><b>身份证</b> —— 边境线上有检查站，会查车查证，不是可带可不带</li>
+        <li><b>伞或帽子</b> —— 德天靠近水流处水汽极大，很多人被淋成落汤鸡</li>
+        <li><b>防蚊液</b> —— 瀑布区蚊子多</li>
+        <li><b>舒适的鞋</b> —— 德天步道 + 旧州石板路</li>
+        <li><b>零钱 / 现金</b> —— 村民停车位、乡镇小店未必都能扫码</li>
+        <li><b>薄外套</b> —— 早上 6 点山里和傍晚水边都凉</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-top:0">车和票</h3>
+      <ul class="check">
+        <li><b>10/2 晚上把德天 80 元门票买好</b>（提前一天，或当天美团）</li>
+        <li><b>南宁或崇左把油加满</b> —— 靖西、德天一带加油站少</li>
+        <li><b>检查胎压和备胎</b> —— 山路隧道多、限速 80，局部单车道</li>
+        <li><b>德天进核心区那段在修路</b>，局部单车道，低底盘轿车慎入</li>
+        <li><b>离线地图</b> —— 边境山区信号会断</li>
+        <li><b>行车记录仪存储卡清空</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p><b>关于这份攻略</b><br>
+  行程与避堵建议综合自：交通运输部 2026 年国庆高速免费时段公告、历年广东国庆高峰预测，以及小红书上 2025–2026 年的自驾实测帖（含 2025-10-04 德天当天记录、2026-07 德天路况实拍、深圳出发崇左避坑帖、靖西本地食客餐厅合集，以及一条由明仕田园当地从业者发布的国庆避堵提示）。</p>
+  <p>票价、开放时间、路况均为整理时的公开信息，<b>出行前请再核对一次</b>，尤其是德天景区的停车与接驳政策 —— 它在 2025–2026 年间已经改过不止一次。实时路况以高德 / 百度为准。</p>
+  <p class="muted">整理于 2026 年 9 月 29 日 · 祝一路顺风</p>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('tt');
+  var saved=null;
+  try{saved=localStorage.getItem('gx-theme')}catch(e){}
+  if(saved){document.documentElement.setAttribute('data-theme',saved)}
+  b.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    var isDark = cur ? cur==='dark'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var next=isDark?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    try{localStorage.setItem('gx-theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
