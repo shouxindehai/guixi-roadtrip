@@ -335,6 +335,18 @@ footer b{color:var(--ink-2)}
   display:grid;place-content:center;
 }
 
+
+/* trip-state badges */
+.day.done{opacity:.74}
+.day.done .day-head{background:var(--paper-3)}
+.day.now{box-shadow:0 0 0 2px var(--clay), var(--shadow-m)}
+.pill-done{background:var(--brand-soft);color:var(--brand)}
+.pill-now{background:var(--clay);color:#fff}
+.done-sum{display:grid;gap:8px;font-size:14.5px;color:var(--ink-2)}
+.done-sum div{display:grid;grid-template-columns:62px 1fr;gap:12px}
+.done-sum b{font-weight:700;color:var(--ink)}
+@media print{.day.done{opacity:1}.day.now{box-shadow:none;border-color:var(--clay)}}
+
 /* ─────────────────────────────  print / pdf  ───────────────────────────── */
 @media print{
   :root,:root[data-theme="dark"]{
@@ -367,7 +379,7 @@ footer b{color:var(--ink-2)}
 
 <!-- ══════════════════════════════  HERO  ══════════════════════════════ -->
 <header class="hero">
-  <svg class="hero-art" viewBox="0 0 1200 260" role="img" aria-label="喀斯特峰林与跨国瀑布的插画">
+  <svg class="hero-art" viewBox="0 0 1200 260" role="img" aria-label="左为喀斯特峰林与跨国瀑布、右为海岸的插画">
     <defs>
       <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="var(--paper-3)"/>
@@ -379,50 +391,50 @@ footer b{color:var(--ink-2)}
       </linearGradient>
     </defs>
     <rect width="1200" height="260" fill="url(#sky)"/>
-    <circle cx="960" cy="74" r="30" fill="var(--d4)" opacity=".28"/>
-    <!-- far peaks -->
+    <circle cx="990" cy="70" r="30" fill="var(--d4)" opacity=".30"/>
+    <!-- far peaks (west half) -->
     <g fill="var(--brand)" opacity=".16">
       <path d="M0 260 L60 150 Q78 122 96 150 L150 236 L186 168 Q202 140 218 168 L268 260Z"/>
       <path d="M240 260 L300 138 Q320 108 340 138 L396 236 L430 176 Q446 150 462 176 L510 260Z"/>
       <path d="M520 260 L578 158 Q596 130 614 158 L664 246 L690 196 Q704 172 718 196 L754 260Z"/>
-      <path d="M760 260 L822 146 Q840 118 858 146 L910 240 L946 182 Q962 156 978 182 L1030 260Z"/>
-      <path d="M1020 260 L1078 164 Q1096 136 1114 164 L1168 252 L1200 210 L1200 260Z"/>
     </g>
-    <!-- mid peaks -->
     <g fill="var(--brand)" opacity=".30">
       <path d="M80 260 L146 176 Q164 152 182 176 L240 260Z"/>
       <path d="M330 260 L392 168 Q410 142 428 168 L492 260Z"/>
       <path d="M640 260 L706 162 Q724 136 742 162 L806 260Z"/>
-      <path d="M900 260 L962 180 Q980 156 998 180 L1058 260Z"/>
     </g>
     <!-- waterfall -->
-    <g transform="translate(500,150)">
+    <g transform="translate(470,150)">
       <path d="M0 0 h36 q6 42 -4 88 h-30 q-10 -46 -2 -88Z" fill="url(#fall)"/>
       <path d="M40 6 h30 q5 36 -3 82 h-26 q-8 -40 -1 -82Z" fill="url(#fall)" opacity=".8"/>
       <ellipse cx="38" cy="92" rx="56" ry="9" fill="var(--d2)" opacity=".22"/>
     </g>
     <!-- rice terraces -->
     <g stroke="var(--d4)" stroke-width="2" fill="none" opacity=".45">
-      <path d="M60 232 q80 -16 168 -4"/>
-      <path d="M46 244 q92 -18 196 -5"/>
-      <path d="M980 226 q80 -14 168 -3"/>
-      <path d="M966 240 q92 -16 196 -4"/>
+      <path d="M60 232 q80 -16 168 -4"/><path d="M46 244 q92 -18 196 -5"/>
+    </g>
+    <!-- sea (east half) -->
+    <path d="M820 260 Q900 196 1010 198 Q1110 200 1200 184 L1200 260Z" fill="var(--d3)" opacity=".16"/>
+    <g stroke="var(--d3)" stroke-width="2.4" fill="none" opacity=".5">
+      <path d="M862 228 q18 -9 36 0 t36 0 t36 0 t36 0 t36 0 t36 0"/>
+      <path d="M888 244 q18 -9 36 0 t36 0 t36 0 t36 0 t36 0 t36 0"/>
+      <path d="M916 212 q16 -8 32 0 t32 0 t32 0 t32 0 t32 0"/>
     </g>
     <!-- road -->
-    <path d="M-10 258 Q300 224 600 246 T1210 232" stroke="var(--clay)" stroke-width="3.5" fill="none" opacity=".65" stroke-linecap="round"/>
+    <path d="M-10 258 Q300 224 600 246 T1210 232" stroke="var(--clay)" stroke-width="3.5" fill="none" opacity=".6" stroke-linecap="round"/>
     <path d="M-10 258 Q300 224 600 246 T1210 232" stroke="var(--paper)" stroke-width="1.4" fill="none" stroke-dasharray="10 12" opacity=".9"/>
   </svg>
 
   <div class="wrap hero-body">
     <p class="eyebrow">2026 国庆 · 深圳出发 · 自驾</p>
-    <h1>桂西南<br><em>五日环线</em></h1>
+    <h1>桂西南<br><em>五日大环线</em></h1>
     <p class="route-line">
-      <b>深圳</b><span>→</span><b>梧州</b><span>→</span><b>明仕田园</b><span>→</span><b>德天瀑布</b><span>→</span><b>靖西</b><span>→</span><b>南宁</b><span>→</span><b>深圳</b>
+      <b>深圳</b><span>→</span><b>梧州</b><span>→</span><b>明仕田园</b><span>→</span><b>德天瀑布</b><span>→</span><b>北海</b><span>→</span><b>湛江</b><span>→</span><b>茂名</b><span>→</span><b>深圳</b>
     </p>
     <div class="stats">
       <div class="stat"><b>10.1<span class="muted" style="font-size:.6em">下午</span>–10.5</b><small>5 天 4 宿</small></div>
-      <div class="stat"><b>≈1800<span class="muted" style="font-size:.6em">km</span></b><small>往返总里程</small></div>
-      <div class="stat"><b>≈24<span class="muted" style="font-size:.6em">h</span></b><small>净驾驶时间</small></div>
+      <div class="stat"><b>≈1950<span class="muted" style="font-size:.6em">km</span></b><small>全程总里程</small></div>
+      <div class="stat"><b>≈26<span class="muted" style="font-size:.6em">h</span></b><small>净驾驶时间</small></div>
       <div class="stat"><b>¥0</b><small>全程高速免费</small></div>
     </div>
   </div>
@@ -432,16 +444,18 @@ footer b{color:var(--ink-2)}
 <section class="wrap" id="map">
   <p class="eyebrow">全程示意</p>
   <h2>路线</h2>
-  <p class="lede">南宁以西是一个真正的环：经崇左向西北去明仕、德天、靖西，再从那靖高速折回南宁，不走回头路。南宁以东是去回共用的干道。</p>
+  <p class="lede">去程走北边的 G80 广昆，返程走南边的海岸线 —— 两条完全不同的路，首尾在深圳闭合。全程不走任何一段回头路。</p>
 
   <figure>
     <div class="fig-scroll">
-      <svg viewBox="0 0 1160 560" role="img" aria-label="深圳到桂西南的全程路线示意图">
-        <rect width="1160" height="560" fill="var(--paper-2)"/>
+      <svg viewBox="0 0 1160 580" role="img" aria-label="深圳出发经梧州、明仕田园、德天瀑布，再经北海、湛江、茂名返回深圳的大环线示意图">
+        <rect width="1160" height="580" fill="var(--paper-2)"/>
 
         <!-- sea -->
-        <path d="M330 560 Q450 484 550 466 Q670 446 790 466 L930 500 L1160 482 L1160 560Z" fill="var(--d3)" opacity=".12"/>
-        <text class="m-region" x="660" y="532" text-anchor="middle" fill="var(--d3)" opacity=".7">北 部 湾</text>
+        <path d="M300 580 Q380 450 520 432 Q620 442 674 500 Q730 540 800 548 L830 580Z" fill="var(--d3)" opacity=".13"/>
+        <path d="M900 580 Q950 510 1030 470 Q1100 448 1160 436 L1160 580Z" fill="var(--d3)" opacity=".13"/>
+        <text class="m-region" x="470" y="520" text-anchor="middle" fill="var(--d3)" opacity=".7">北 部 湾</text>
+        <text class="m-region" x="1030" y="540" text-anchor="middle" fill="var(--d3)" opacity=".7">南 海</text>
 
         <!-- province divider -->
         <path d="M762 60 Q744 190 770 330 Q788 420 772 500" stroke="var(--rule-2)" stroke-width="1.6" fill="none" stroke-dasharray="7 7"/>
@@ -449,54 +463,57 @@ footer b{color:var(--ink-2)}
         <text class="m-region" x="850" y="86" text-anchor="middle">广 东</text>
 
         <!-- vietnam border -->
-        <path d="M22 322 Q90 292 158 290 Q232 294 300 356 Q372 408 444 452" stroke="var(--brand)" stroke-width="1.8" fill="none" stroke-dasharray="3 6" opacity=".55"/>
-        <text class="m-region" x="132" y="366" fill="var(--brand)" opacity=".7">越 南</text>
+        <path d="M22 322 Q90 292 158 290 Q232 294 300 356 Q360 400 400 440" stroke="var(--brand)" stroke-width="1.8" fill="none" stroke-dasharray="3 6" opacity=".55"/>
+        <text class="m-region" x="120" y="372" fill="var(--brand)" opacity=".7">越 南</text>
 
         <!-- karst decor -->
         <g fill="var(--brand)" opacity=".13">
           <path d="M330 292 L352 258 L374 292Z"/><path d="M366 306 L392 260 L418 306Z"/>
-          <path d="M240 388 L262 354 L284 388Z"/><path d="M330 400 L354 360 L378 400Z"/>
           <path d="M150 128 L172 94 L194 128Z"/><path d="M196 112 L216 82 L236 112Z"/>
           <path d="M60 148 L82 114 L104 148Z"/>
         </g>
 
         <!-- ══ routes ══ -->
-        <!-- Day1 -->
+        <!-- D1 -->
         <path d="M1068 279 L986 283 L948 275 Q880 258 821 229 L729 156" stroke="var(--d1)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Day2 -->
+        <!-- D2 -->
         <path d="M729 156 Q620 168 524 206 Q460 232 410 252 L300 332 L268 252 L212 228" stroke="var(--d2)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Day3 -->
-        <path d="M212 228 L158 264 L100 194" stroke="var(--d3)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Day4 -->
-        <path d="M100 194 Q250 166 410 252" stroke="var(--d4)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Day5 (offset return) -->
-        <path d="M410 270 Q460 252 524 224 Q620 186 729 174 Q790 200 838 244 Q890 286 948 293 L1068 297"
-              stroke="var(--d5)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 7"/>
+        <!-- D3 : 德天 spur + 东南向北海 -->
+        <path d="M212 228 L158 264" stroke="var(--d3)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M212 228 L268 252 L300 332 Q350 348 404 355 Q440 388 465 422" stroke="var(--d3)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0"/>
+        <!-- D4 -->
+        <path d="M465 422 Q560 400 616 450 L686 398" stroke="var(--d4)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- D5 -->
+        <path d="M686 398 Q750 388 814 371 Q890 330 948 275 L986 283 L1068 279" stroke="var(--d5)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
         <!-- segment labels -->
         <g class="m-seg">
-          <text x="905" y="238" fill="var(--d1)" text-anchor="middle">D1 · 4.5–6h</text>
-          <text x="446" y="182" fill="var(--d2)" text-anchor="middle">D2 · 5.5h</text>
-          <text x="252" y="302" fill="var(--d3)" text-anchor="start">D3 · 3h</text>
-          <text x="252" y="156" fill="var(--d4)" text-anchor="middle">D4 · 3.5h</text>
-          <text x="660" y="138" fill="var(--d5)" text-anchor="middle">D5 · 7h 返程</text>
+          <text x="905" y="238" fill="var(--d1)" text-anchor="middle">D1 · 390km</text>
+          <text x="446" y="182" fill="var(--d2)" text-anchor="middle">D2 · 450km</text>
+          <text x="318" y="300" fill="var(--d3)" text-anchor="start">D3 · 353km</text>
+          <text x="560" y="462" fill="var(--d4)" text-anchor="middle">D4 · 284km</text>
+          <text x="840" y="330" fill="var(--d5)" text-anchor="middle">D5 · 390km</text>
         </g>
 
-        
-        <!-- ══ city markers ══ -->
+        <!-- ══ markers ══ -->
         <g>
-          <!-- pass-through (drawn first, sits under the named stops) -->
+          <!-- pass-through -->
           <g fill="var(--ink-3)">
             <circle cx="986" cy="283" r="4"/><circle cx="948" cy="275" r="4"/>
             <circle cx="821" cy="229" r="4"/><circle cx="524" cy="206" r="4"/>
-            <circle cx="300" cy="332" r="4"/><circle cx="268" cy="252" r="4"/>
+            <circle cx="410" cy="252" r="4"/><circle cx="300" cy="332" r="4"/>
+            <circle cx="268" cy="252" r="4"/><circle cx="404" cy="355" r="4"/>
+            <circle cx="814" cy="371" r="4"/>
           </g>
           <text class="m-sub" x="992" y="306" text-anchor="middle">中山</text>
           <text class="m-sub" x="936" y="260" text-anchor="end">江门</text>
           <text class="m-sub" x="821" y="252" text-anchor="middle">云浮</text>
           <text class="m-sub" x="534" y="192" text-anchor="start">贵港</text>
-          <text class="m-sub" x="300" y="352" text-anchor="middle">崇左</text>
+          <text class="m-sub" x="398" y="240" text-anchor="end">南宁</text>
+          <text class="m-sub" x="286" y="352" text-anchor="middle">崇左</text>
           <text class="m-sub" x="280" y="246" text-anchor="start">大新</text>
+          <text class="m-sub" x="404" y="342" text-anchor="middle">钦州</text>
+          <text class="m-sub" x="824" y="362" text-anchor="start">阳江</text>
 
           <!-- start / end -->
           <g transform="translate(1068,279)">
@@ -511,216 +528,174 @@ footer b{color:var(--ink-2)}
           <text class="m-sub" x="729" y="118" text-anchor="middle">10/1 宿</text>
 
           <g transform="translate(212,228)"><circle r="9" fill="var(--d2)" stroke="var(--paper-2)" stroke-width="3"/></g>
-          <text class="m-city" x="220" y="256" text-anchor="middle">明仕田园</text>
-          <text class="m-sub" x="220" y="272" text-anchor="middle">10/2 宿</text>
+          <text class="m-city" x="220" y="208" text-anchor="middle">明仕田园</text>
+          <text class="m-sub" x="220" y="192" text-anchor="middle">10/2 宿</text>
 
           <g transform="translate(158,264)"><circle r="6.5" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
           <text class="m-city-sm" x="158" y="292" text-anchor="middle">德天瀑布</text>
 
-          <g transform="translate(100,194)"><circle r="9" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3"/></g>
-          <text class="m-city" x="100" y="174" text-anchor="middle">靖西</text>
-          <text class="m-sub" x="100" y="158" text-anchor="middle">10/3 宿</text>
+          <g transform="translate(465,422)"><circle r="9" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3"/></g>
+          <text class="m-city" x="455" y="448" text-anchor="middle">北海</text>
+          <text class="m-sub" x="455" y="464" text-anchor="middle">10/3 宿</text>
 
-          <g transform="translate(410,252)"><circle r="9" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3"/></g>
-          <text class="m-city" x="424" y="248" text-anchor="start">南宁</text>
-          <text class="m-sub" x="424" y="264" text-anchor="start">10/4 宿</text>
+          <g transform="translate(616,450)"><circle r="9" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3"/></g>
+          <text class="m-city" x="628" y="472" text-anchor="start">湛江</text>
+          <text class="m-sub" x="628" y="488" text-anchor="start">10/4 整天吃</text>
+
+          <g transform="translate(686,398)"><circle r="9" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3"/></g>
+          <text class="m-city" x="698" y="394" text-anchor="start">茂名</text>
+          <text class="m-sub" x="698" y="410" text-anchor="start">10/4 宿</text>
         </g>
 
         <!-- legend -->
-        <g transform="translate(860,368)">
-          <rect x="-14" y="-18" width="290" height="140" rx="10" fill="var(--paper-3)" stroke="var(--rule)"/>
+        <g transform="translate(78,424)">
+          <rect x="-14" y="-18" width="300" height="142" rx="10" fill="var(--paper-3)" stroke="var(--rule)"/>
           <g class="m-seg">
-            <rect x="0" y="0" width="22" height="5" rx="2.5" fill="var(--d1)"/><text x="32" y="6" fill="var(--ink-2)">Day 1　深圳 → 梧州</text>
-            <rect x="0" y="24" width="22" height="5" rx="2.5" fill="var(--d2)"/><text x="32" y="30" fill="var(--ink-2)">Day 2　梧州 → 明仕田园</text>
-            <rect x="0" y="48" width="22" height="5" rx="2.5" fill="var(--d3)"/><text x="32" y="54" fill="var(--ink-2)">Day 3　德天 → 靖西</text>
-            <rect x="0" y="72" width="22" height="5" rx="2.5" fill="var(--d4)"/><text x="32" y="78" fill="var(--ink-2)">Day 4　靖西 → 南宁</text>
-            <rect x="0" y="96" width="22" height="5" rx="2.5" fill="var(--d5)"/><text x="32" y="102" fill="var(--ink-2)">Day 5　南宁 → 深圳（返程）</text>
+            <rect x="0" y="0" width="22" height="5" rx="2.5" fill="var(--d1)"/><text x="32" y="6" fill="var(--ink-2)">D1　深圳 → 梧州</text>
+            <rect x="0" y="24" width="22" height="5" rx="2.5" fill="var(--d2)"/><text x="32" y="30" fill="var(--ink-2)">D2　梧州 → 明仕田园</text>
+            <rect x="0" y="48" width="22" height="5" rx="2.5" fill="var(--d3)"/><text x="32" y="54" fill="var(--ink-2)">D3　德天 → 北海</text>
+            <rect x="0" y="72" width="22" height="5" rx="2.5" fill="var(--d4)"/><text x="32" y="78" fill="var(--ink-2)">D4　北海 → 湛江 → 茂名</text>
+            <rect x="0" y="96" width="22" height="5" rx="2.5" fill="var(--d5)"/><text x="32" y="102" fill="var(--ink-2)">D5　茂名 → 深圳</text>
           </g>
         </g>
       </svg>
     </div>
     <p class="swipe-hint">← 左右滑动查看完整地图 →</p>
-    <figcaption>示意图，非按比例地理投影；城市相对位置与实际经纬度大致对应。返程（紫色虚线）与去程在南宁以东基本重合，图中为便于阅读作了偏移绘制。</figcaption>
+    <figcaption>示意图，非按比例地理投影。北上去、南下回，整条线是闭合的，没有任何一段重复。</figcaption>
   </figure>
 </section>
 
 <!-- ══════════════════════════════  MAP 2  ══════════════════════════════ -->
-<section class="wrap" id="loop">
-  <p class="eyebrow">桂西南核心</p>
-  <h2>环线放大图</h2>
-  <p class="lede">Day 2 下午到 Day 4 中午，全部发生在这张图里。</p>
+<section class="wrap" id="back">
+  <p class="eyebrow">10/3 中午起</p>
+  <h2>返程段放大</h2>
+  <p class="lede">从德天出来往东南切到海边。<strong>关键是走钦崇高速</strong> —— 崇左直达钦州，不进南宁。</p>
 
   <figure>
     <div class="fig-scroll">
-      <svg viewBox="0 0 1120 620" role="img" aria-label="桂西南环线放大图：南宁、崇左、大新、明仕田园、德天瀑布、靖西、鹅泉、旧州、渠洋湖">
-        <rect width="1120" height="620" fill="var(--paper-2)"/>
+      <svg viewBox="0 0 1120 580" role="img" aria-label="明仕田园经崇左、钦州、北海、湛江到茂名的返程路线放大图">
+        <rect width="1120" height="580" fill="var(--paper-2)"/>
+
+        <!-- 北部湾 -->
+        <path d="M250 580 Q370 400 520 384 Q620 394 676 462 Q732 506 800 514 L838 560 L848 580Z" fill="var(--d3)" opacity=".14"/>
+        <!-- 南海 -->
+        <path d="M948 580 Q986 500 1064 462 Q1096 450 1120 444 L1120 580Z" fill="var(--d3)" opacity=".14"/>
+        <text class="m-region" x="470" y="520" text-anchor="middle" fill="var(--d3)" opacity=".75">北 部 湾</text>
+        <text class="m-region" x="1048" y="562" text-anchor="middle" fill="var(--d3)" opacity=".75">南 海</text>
+        <text class="m-sub" x="872" y="550" text-anchor="middle" fill="var(--ink-3)">雷州半岛</text>
 
         <!-- vietnam -->
-        <path d="M720 620 C580 540 470 440 350 360 C260 300 150 290 30 308 L30 620Z" fill="var(--brand)" opacity=".07"/>
-        <path d="M720 620 C580 540 470 440 350 360 C260 300 150 290 30 308" stroke="var(--brand)" stroke-width="2" fill="none" stroke-dasharray="4 7" opacity=".6"/>
-        <text class="m-region" x="150" y="470" fill="var(--brand)" opacity=".75">越 南</text>
-        <text class="m-sub" x="470" y="446" fill="var(--brand)" opacity=".8" transform="rotate(-32 470 446)">中越边境线（示意）</text>
+        <path d="M60 300 Q140 330 210 400 Q260 452 300 520" stroke="var(--brand)" stroke-width="1.8" fill="none" stroke-dasharray="3 6" opacity=".5"/>
+        <text class="m-region" x="96" y="420" fill="var(--brand)" opacity=".7">越 南</text>
 
         <!-- karst decor -->
-        <g fill="var(--brand)" opacity=".13">
-          <path d="M400 250 L424 208 L448 250Z"/><path d="M448 262 L474 212 L500 262Z"/>
-          <path d="M290 280 L312 244 L334 280Z"/><path d="M640 300 L666 252 L692 300Z"/>
-          <path d="M690 312 L712 276 L734 312Z"/><path d="M150 320 L174 280 L198 320Z"/>
-          <path d="M820 380 L846 334 L872 380Z"/>
-        </g>
-        <!-- terraces -->
-        <g stroke="var(--d4)" stroke-width="2" fill="none" opacity=".5">
-          <path d="M90 300 q54 -12 112 -3"/><path d="M84 312 q58 -13 122 -3"/>
+        <g fill="var(--brand)" opacity=".12">
+          <path d="M190 180 L212 146 L234 180Z"/><path d="M236 194 L260 156 L284 194Z"/>
+          <path d="M330 262 L352 228 L374 262Z"/>
         </g>
 
         <!-- ══ routes ══ -->
-        <path d="M1024 346 Q820 470 604 544 Q560 430 538 341 L434 299" stroke="var(--d2)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M434 299 L372 318 L318 336" stroke="var(--d3)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M318 336 Q262 290 230 205" stroke="var(--d3)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M230 205 Q620 206 1024 346" stroke="var(--d4)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- local spurs -->
-        <path d="M230 205 L160 296" stroke="var(--d4)" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M230 205 L124 166" stroke="var(--d4)" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M230 205 Q258 140 280 92" stroke="var(--ink-3)" stroke-width="2.5" fill="none" stroke-dasharray="6 6" stroke-linecap="round"/>
+        <!-- 已完成：德天 spur -->
+        <path d="M151 114 L97 128" stroke="var(--d3)" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="7 6" opacity=".55"/>
+        <!-- D3 今天下午 -->
+        <path d="M151 114 L208 135 L244 234 Q390 292 527 331 Q590 390 640 446" stroke="var(--d3)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- D4 -->
+        <path d="M640 446 Q760 400 901 416 L919 494" stroke="var(--d4)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M919 494 L1047 404" stroke="var(--d4)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- D5 continues off-map -->
+        <path d="M1047 404 L1110 362" stroke="var(--d5)" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="14 8"/>
+        <text class="m-sub" x="1086" y="340" text-anchor="end" fill="var(--d5)">10/5 → 深圳</text>
 
-        <!-- road name labels -->
-        <text class="m-sub" x="790" y="470" text-anchor="middle" fill="var(--d2)" transform="rotate(-24 790 470)">G7211 南友高速</text>
-        <text class="m-sub" x="392" y="356" text-anchor="middle" fill="var(--d3)">延边公路 S325</text>
-        <text class="m-sub" x="294" y="244" text-anchor="start" fill="var(--d3)">合那高速 · 最美段</text>
-        <text class="m-sub" x="640" y="222" text-anchor="middle" fill="var(--d4)">那靖高速 → 南宁 3.5h</text>
+        <!-- road labels -->
+        <text class="m-sub" x="382" y="268" text-anchor="middle" fill="var(--d3)">钦崇高速 · 168km / 2.3h</text>
+        <text class="m-sub" x="596" y="372" text-anchor="middle" fill="var(--d3)" transform="rotate(42 596 372)">G75 兰海</text>
+        <text class="m-sub" x="784" y="404" text-anchor="middle" fill="var(--d4)">G15 沈海 · 174km / 2.5h</text>
+        <text class="m-sub" x="1000" y="462" text-anchor="middle" fill="var(--d4)" transform="rotate(-35 1000 462)">110km / 1.3h</text>
 
-        <!-- ══ markers ══ -->
-        <g transform="translate(1024,346)"><circle r="11" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
-        <text class="m-city" x="1024" y="322" text-anchor="middle">南宁</text>
-        <text class="m-sub" x="1024" y="384" text-anchor="middle">10/4 宿 · 老友粉</text>
+        <!-- markers -->
+        <g transform="translate(97,128)"><circle r="6.5" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="2.5" opacity=".6"/></g>
+        <text class="m-city-sm" x="97" y="104" text-anchor="middle" opacity=".7">德天瀑布</text>
+        <text class="m-sub" x="97" y="152" text-anchor="middle" opacity=".7">今早已完成</text>
 
-        <g transform="translate(604,544)"><circle r="6" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
-        <text class="m-city-sm" x="604" y="572" text-anchor="middle">崇左</text>
+        <g transform="translate(151,114)"><circle r="10" fill="var(--d2)" stroke="var(--paper-2)" stroke-width="3"/></g>
+        <text class="m-city" x="176" y="92" text-anchor="start">明仕田园</text>
+        <text class="m-sub" x="176" y="108" text-anchor="start">13:00 从这里出发</text>
 
-        <g transform="translate(538,341)"><circle r="6" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
-        <text class="m-city-sm" x="552" y="336" text-anchor="start">大新</text>
+        <g transform="translate(208,135)"><circle r="4.5" fill="var(--ink-3)"/></g>
+        <text class="m-sub" x="216" y="152" text-anchor="start">大新</text>
 
-        <g transform="translate(434,299)"><circle r="11" fill="var(--d2)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
-        <text class="m-city" x="434" y="274" text-anchor="middle">明仕田园</text>
-        <text class="m-sub" x="434" y="258" text-anchor="middle">10/2 宿 · 大门免费</text>
+        <g transform="translate(244,234)"><circle r="5.5" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2"/></g>
+        <text class="m-city-sm" x="232" y="228" text-anchor="end">崇左</text>
 
-        <g transform="translate(372,318)"><circle r="5.5" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
-        <text class="m-sub" x="380" y="306" text-anchor="start">硕龙镇</text>
+        <g transform="translate(527,331)"><circle r="5.5" fill="var(--ink-3)" stroke="var(--paper-2)" stroke-width="2"/></g>
+        <text class="m-city-sm" x="527" y="316" text-anchor="middle">钦州</text>
 
-        <g transform="translate(318,336)">
-          <circle r="13" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3.5"/>
-          <path d="M-4 -5 h8 v10 h-8Z" fill="var(--paper-2)" opacity=".9"/>
-        </g>
-        <text class="m-city" x="318" y="372" text-anchor="middle">德天跨国瀑布</text>
-        <text class="m-sub" x="318" y="388" text-anchor="middle">10/3 早场 7:30 进场</text>
+        <g transform="translate(640,446)"><circle r="11" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
+        <text class="m-city" x="624" y="476" text-anchor="middle">北海</text>
+        <text class="m-sub" x="624" y="492" text-anchor="middle">10/3 宿 · 侨港 / 银滩</text>
 
-        <g transform="translate(230,205)"><circle r="11" fill="var(--d3)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
-        <text class="m-city" x="230" y="184" text-anchor="middle">靖西</text>
-        <text class="m-sub" x="230" y="168" text-anchor="middle">10/3 宿</text>
+        <g transform="translate(901,416)"><circle r="4.5" fill="var(--ink-3)"/></g>
+        <text class="m-sub" x="901" y="404" text-anchor="middle">廉江</text>
 
-        <g transform="translate(160,296)"><circle r="7" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
-        <text class="m-city-sm" x="150" y="322" text-anchor="middle">鹅泉</text>
-        <text class="m-sub" x="150" y="338" text-anchor="middle">18:00 后免票</text>
+        <g transform="translate(919,494)"><circle r="11" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3.5"/></g>
+        <text class="m-city" x="940" y="508" text-anchor="start">湛江</text>
+        <text class="m-sub" x="940" y="524" text-anchor="start">10/4 整天 · 赤坎 / 霞山</text>
 
-        <g transform="translate(124,166)"><circle r="7" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="2.5"/></g>
-        <text class="m-city-sm" x="114" y="148" text-anchor="middle">旧州古镇</text>
-
-        <g transform="translate(280,92)">
-          <circle r="7" fill="var(--paper-2)" stroke="var(--d4)" stroke-width="2.5" stroke-dasharray="3.4 3"/>
-          <circle r="2.5" fill="var(--d4)"/>
-        </g>
-        <text class="m-city-sm" x="296" y="88" text-anchor="start">渠洋湖</text>
-        <text class="m-sub" x="296" y="104" text-anchor="start">可选 · 导航「岜旗观景亭」</text>
-
-
-        <!-- legend -->
-        <g transform="translate(790,540)">
-          <rect x="-16" y="-24" width="330" height="62" rx="10" fill="var(--paper-3)" stroke="var(--rule)"/>
-          <g class="m-seg">
-            <circle cx="0" cy="-4" r="7" fill="var(--ink-3)"/><text x="16" y="0" fill="var(--ink-2)">途经不停</text>
-            <circle cx="112" cy="-4" r="9" fill="var(--d2)"/><text x="130" y="0" fill="var(--ink-2)">过夜</text>
-            <circle cx="196" cy="-4" r="7" fill="var(--d4)"/><text x="212" y="0" fill="var(--ink-2)">景点</text>
-            <line x1="0" y1="22" x2="24" y2="22" stroke="var(--ink-3)" stroke-width="2.5" stroke-dasharray="6 6"/>
-            <text x="34" y="26" fill="var(--ink-2)">可选绕行</text>
-          </g>
-        </g>
+        <g transform="translate(1047,404)"><circle r="10" fill="var(--d4)" stroke="var(--paper-2)" stroke-width="3"/></g>
+        <text class="m-city" x="1040" y="384" text-anchor="middle">茂名</text>
+        <text class="m-sub" x="1040" y="368" text-anchor="middle">10/4 宿</text>
       </svg>
     </div>
     <p class="swipe-hint">← 左右滑动查看完整地图 →</p>
-    <figcaption>示意图。德天瀑布本身就骑在中越边境线上，图中边境走向为示意画法。硕龙镇与德天的实际间距约 10 分钟车程，为标注清晰作了放大。</figcaption>
+    <figcaption>示意图。不经南宁、梧州、肇庆 —— 来时那条 G80 广昆一段都不碰。</figcaption>
   </figure>
 </section>
 
 <!-- ══════════════════════════════  DAYS  ══════════════════════════════ -->
 <section class="wrap" id="days">
   <p class="eyebrow">逐日</p>
-  <h2>五天怎么走</h2>
-  <p class="lede">Day 3 早上 5:45 起床赶德天早场，是全程唯一一次早起。其余四天都不赶。</p>
+  <h2>行程</h2>
 
-  <!-- DAY 1 -->
-  <article class="day" style="--tl-c:var(--d1)">
+  <div class="callout warn" style="margin-top:4px">
+    <span class="tag">现在就做</span>
+    <p><strong>订今晚北海的酒店。</strong>国庆第三天的北海是热门，边开边让副驾订。建议订<strong>金沙湾或侨港附近</strong>。</p>
+  </div>
+
+  <!-- DAY 1-2 done -->
+  <article class="day done">
     <div class="day-head">
-      <div class="day-badge" style="background:var(--d1)"><small>DAY</small><b>1</b></div>
+      <div class="day-badge" style="background:var(--ink-3)"><small>DAY</small><b>1–2</b></div>
       <div class="day-title">
-        <h3>深圳 → 梧州</h3>
-        <div class="day-meta"><b>10/1 周四</b>　·　约 390km　·　正常 4.5h，国庆按 <b>6h</b> 算　·　宿 <b>梧州</b></div>
+        <h3>深圳 → 梧州 → 明仕田园　<span class="pill pill-done">已完成</span></h3>
+        <div class="day-meta"><b>10/1 – 10/2</b>　·　约 840km</div>
       </div>
     </div>
     <div class="day-body">
-      <ul class="tl">
-        <li><time>16:30</time><b>深圳出发</b><span>走深中通道 → 中山 → 江门 → 开阳高速 → 云浮 → G80 广昆，全程不进广州绕城。上午出门会撞上 9/30 晚那波滞留在云浮、肇庆的车流，下午走更顺。</span></li>
-        <li><time>19:00</time><b>云浮一带服务区吃饭</b><span>这段是广东侧最后的堵点，吃完饭往往就顺了。</span></li>
-        <li><time>22:30</time><b>抵达梧州</b><span>住市区。运气好（路上顺）可以继续开 1 小时到玉林，Day 2 会轻松半小时。</span></li>
-        <li><time>23:00</time><b>夜宵</b><span>纸包鸡、炒田螺。第二天早餐留给冰泉豆浆。</span></li>
-      </ul>
-    </div>
-  </article>
-
-  <!-- DAY 2 -->
-  <article class="day" style="--tl-c:var(--d2)">
-    <div class="day-head">
-      <div class="day-badge" style="background:var(--d2)"><small>DAY</small><b>2</b></div>
-      <div class="day-title">
-        <h3>梧州 → 南宁 → 崇左大新 → 明仕田园</h3>
-        <div class="day-meta"><b>10/2 周五</b>　·　约 450km　·　<b>5.5h</b>　·　宿 <b>明仕田园民宿</b></div>
+      <div class="done-sum">
+        <div><b>10/1</b><span>深圳 16:30 出发，走深中通道 → 江门 → 云浮 → G80 广昆，宿梧州。</span></div>
+        <div><b>10/2</b><span>梧州 → 南宁 → 崇左大新 → 明仕田园。下午十里画廊、幸福桥，傍晚日落。</span></div>
       </div>
-    </div>
-    <div class="day-body">
-      <ul class="tl">
-        <li><time>08:00</time><b>梧州出发</b><span>G80 广昆一路向西，过贵港、南宁。</span></li>
-        <li><time>12:00</time><b>南宁午饭</b><span>顺路嗦一碗老友粉。南宁到明仕这段没什么吃的，在这里吃饱。</span></li>
-        <li><time>12:40</time><b>南宁 → 崇左 → 大新</b><span>G7211 南友高速转大新方向，约 2.5h。</span></li>
-        <li><time>15:00</time><b>抵达明仕田园，入住</b><span>大门免费。放下行李先歇一会儿。</span></li>
-        <li><time>16:00</time><b>十里画廊 + 幸福桥</b><span>这两处<strong>停车免费</strong>，是明仕真正的精华。租辆电动车沿田埂骑，自己找机位，比景区里那段强。</span></li>
-        <li><time>18:20</time><b>等一场日落</b><span>住这里的全部意义。峰林剪影 + 稻田，10 月正是稻黄期。</span></li>
-        <li><time>19:30</time><b>民宿吃晚饭</b><span>别去硕龙街 —— 实测「比德天景区还贵」。</span></li>
-        <li><time>21:30</time><b>早睡</b><span>明早 5:45 起。今晚把德天的 80 元门票在网上买好。</span></li>
-      </ul>
     </div>
   </article>
 
   <!-- DAY 3 -->
-  <article class="day" style="--tl-c:var(--d3)">
+  <article class="day now" style="--tl-c:var(--d3)">
     <div class="day-head">
       <div class="day-badge" style="background:var(--d3)"><small>DAY</small><b>3</b></div>
       <div class="day-title">
-        <h3>明仕 → 德天瀑布（早场）→ 靖西</h3>
-        <div class="day-meta"><b>10/3 周六</b>　·　约 140km　·　<b>3h</b>　·　宿 <b>靖西市区</b></div>
+        <h3>德天瀑布 → 北海　<span class="pill pill-now">今天</span></h3>
+        <div class="day-meta"><b>10/3 周六</b>　·　下午 353km　·　<b>约 5h</b>　·　宿 <b>北海</b></div>
       </div>
     </div>
     <div class="day-body">
+      <div class="done-sum" style="margin-bottom:16px">
+        <div><b>上午</b><span>德天瀑布早场 —— 已完成。</span></div>
+      </div>
       <ul class="tl">
-        <li><time>05:45</time><b>起床</b><span>全程唯一一次早起。值得。</span></li>
-        <li><time>06:00</time><b>出发去德天</b><span>走<strong>延边公路（S325）</strong>，不走崇左一级公路 —— 后者有个硕龙收费站，平时每次 10 元。延边公路紧贴中越边境线，路也更好看。</span></li>
-        <li><time>07:00</time><b>到德天景区</b><span>过硕龙镇牌坊后<strong>走左边新路</strong>，避开镇上的会车堵点（当地人原话，那是往年最堵路段）。</span></li>
-        <li><time>07:30</time><b>第一波进场</b><span>景区 08:00 开放，7:30 前到检票口排队。具体停哪、买哪种票，见下面「德天攻坚战」。</span></li>
-        <li><time>07:40</time><b>直奔稻田咖啡屋</b><span>最出片的机位，<strong>不用买咖啡也能进</strong>。栈道上有人守着是限流，不是查消费。晚一点就排长队。</span></li>
-        <li><time>08:30</time><b>沿步道看瀑布</b><span>几个观景台各有角度，越往出口方向的观景台位置越高。836 号界碑免费打卡。景区不大，从容走完约 2 小时。</span></li>
-        <li><time>09:30</time><b>出景区</b><span>此时门口进场的车队通常已排起数公里 —— 你正好逆着走。</span></li>
-        <li><time>10:30</time><b>德天 → 靖西</b><span>走<strong>合那高速大新–靖西段</strong>，被本地人叫「广西最美高速」，喀斯特峰林加晨雾，沿途观景台随时可停。约 1.5–2h。</span></li>
-        <li><time>12:30</time><b>靖西午饭 + 入住</b><span>睡个午觉。这半天是给 Day 2、Day 3 的早起补的。</span></li>
-        <li><time>17:40</time><b>鹅泉</b><span><strong>18:00 后免票入园</strong>。十五孔桥、倒影、村子的炊烟，傍晚的光最好。</span></li>
-        <li><time>19:30</time><b>靖西晚饭</b><span>牛肉火锅或鸭脚煲。这是全程美食最值得的一顿，见「美食」一节。</span></li>
+        <li><time>13:00</time><b>从明仕 / 德天出发</b><span>大新 → 崇左 → <strong>钦崇高速</strong>（崇左直达钦州，168km / 2.3h，不进南宁）→ 钦州 → <strong>G75 兰海高速</strong> → 北海。</span></li>
+        <li><time>18:00</time><b>抵北海，先 check in</b><span>金沙湾或侨港一带最方便。</span></li>
+        <li><time>18:30</time><b>银滩散步</b><span>日落后去，不晒、人也散了。如果 17:40 前就能到，改去<strong>冠头岭</strong>看日落（10 月初日落约 18:15）。</span></li>
+        <li><time>19:30</time><b>侨港风情街吃晚饭</b><span>1978 年安置越南归侨建的社区，是北海最值得吃的地方 —— 海鲜大排档、越南卷粉、糖水、虾饼。比银滩值得。</span></li>
       </ul>
     </div>
   </article>
@@ -730,23 +705,25 @@ footer b{color:var(--ink-2)}
     <div class="day-head">
       <div class="day-badge" style="background:var(--d4)"><small>DAY</small><b>4</b></div>
       <div class="day-title">
-        <h3>靖西 → 南宁</h3>
-        <div class="day-meta"><b>10/4 周日</b>　·　约 230km　·　<b>3.5h</b>　·　宿 <b>南宁市区</b></div>
+        <h3>北海 → 湛江 → 茂名</h3>
+        <div class="day-meta"><b>10/4 周日</b>　·　284km　·　<b>约 3.8h</b>　·　宿 <b>茂名</b></div>
       </div>
     </div>
     <div class="day-body">
       <ul class="tl">
-        <li><time>08:30</time><b>睡到自然醒</b><span>全程最松的一天。想看鹅泉晨雾的话 07:00 前再去一次，同样免票。</span></li>
-        <li><time>09:30</time><b>旧州古镇</b><span>离市区 8km。绣球一条街，30 元可以自己做一个绣球带走，是这趟唯一的手作体验。</span></li>
-        <li><time>11:30</time><b>靖西市区午饭 + 采购</b><span>带点酸嘢、大香糯回去。</span></li>
-        <li><time>13:00</time><b>出发去南宁</b><span>走那靖高速，不走回头路。约 3.5h。</span></li>
-        <li><time>16:30</time><b>抵达南宁，入住</b><span>放行李，歇脚。</span></li>
-        <li><time>17:30</time><b>三街两巷</b><span>老街区随便逛逛，不用赶。</span></li>
-        <li><time>19:00</time><b>南宁的一顿好饭</b><span>柠檬鸭、酸笋田螺、卷筒粉。夜市想去的话建政路比中山路实在。</span></li>
+        <li><time>07:00</time><b>侨港吃早餐</b><span>海鲜粥 / 越南卷粉 / 虾饼。</span></li>
+        <li><time>08:00</time><b>出发去湛江</b><span>北海 → 合浦 → 廉江 → 湛江，G15 沈海高速，174km / 2.5h。</span></li>
+        <li><time>10:30</time><b>赤坎老街</b><span>骑楼老街，边逛边吃。胡须佬椰子汁、狗毛膏、曹记炸串（近中山路麦当劳）。</span></li>
+        <li><time>12:00</time><b>午饭：海鲜汤 + 五杯鸭</b><span>这是本地人心里的 Top，不是游客榜。详见下面「湛江吃什么」。</span></li>
+        <li><time>14:30</time><b>金沙湾观海长廊</b><span>或者去<strong>湖光岩</strong>（火山口玛珥湖，世界地质公园，约 50 元），二选一，别都去。</span></li>
+        <li><time>16:30</time><b>下午茶</b><span>糖水或本地柠檬茶。赤坎的荣叔糖水店基本都 5 块一碗。</span></li>
+        <li><time>17:30</time><b>晚饭：生蚝</b><span>湛江美食天花板。烧蚝帮，或振兴路大排档一条街。</span></li>
+        <li><time>19:00</time><b>出发去茂名</b><span>110km / 1.3h。</span></li>
+        <li><time>20:20</time><b>到茂名</b><span>化州糖水当夜宵。住下，明早 6:30 起。</span></li>
       </ul>
-      <div class="callout good">
-        <span class="tag">可选</span>
-        <p>愿意多开 1 小时就往北绕<strong>渠洋湖</strong>（导航「岜旗观景亭」，爬到观景台即可，游船可省）。<strong>巴泽梯田</strong>金黄期且免费，但最后 4–5km 山道只容一车，低底盘轿车别去。</p>
+      <div class="callout">
+        <span class="tag">为什么不住湛江</span>
+        <p>湛江到深圳是 <strong>498km / 6.5h</strong>。住湛江的话 10/5 要 05:00 出发才能中午前到，零缓冲。往东挪到茂名这 1.3 小时，换来明早多睡 1.5 小时和一整段余量。</p>
       </div>
     </div>
   </article>
@@ -756,15 +733,15 @@ footer b{color:var(--ink-2)}
     <div class="day-head">
       <div class="day-badge" style="background:var(--d5)"><small>DAY</small><b>5</b></div>
       <div class="day-title">
-        <h3>南宁 → 深圳</h3>
-        <div class="day-meta"><b>10/5 周一</b>　·　约 600km　·　<b>7h</b>　·　到家</div>
+        <h3>茂名 → 深圳</h3>
+        <div class="day-meta"><b>10/5 周一</b>　·　390km　·　<b>约 4.5–5h</b>　·　中午前到家</div>
       </div>
     </div>
     <div class="day-body">
       <ul class="tl">
-        <li><time>07:00</time><b>南宁出发</b><span>早走。10/5 下午起返程车流渐增，10/6 是全假期最堵的一天。</span></li>
-        <li><time>10:00</time><b>贵港/梧州段服务区休整</b><span>全程安排两次休息，别硬撑。</span></li>
-        <li><time>15:00</time><b>到深圳</b><span>下午到家，晚上还能收拾行李、好好睡一觉，第二天不至于假期后遗症。</span></li>
+        <li><time>06:30</time><b>茂名出发</b><span>G15 沈海高速 → 阳江 → 江门 → 深中通道 → 深圳。</span></li>
+        <li><time>09:00</time><b>阳江一带服务区休整</b><span>一次就够。</span></li>
+        <li><time>11:00</time><b>到深圳</b><span>中午前到家。</span></li>
       </ul>
     </div>
   </article>
@@ -772,9 +749,9 @@ footer b{color:var(--ink-2)}
 
 <!-- ══════════════════════════════  TRAFFIC  ══════════════════════════════ -->
 <section class="wrap" id="traffic">
-  <p class="eyebrow">避堵</p>
+  <p class="eyebrow">返程路况</p>
   <h2>避堵</h2>
-  <p class="lede">2026 国庆假期 10/1（周四）至 10/7（周三），共 7 天。7 座及以下小客车高速免费时段为 <strong>10/1 00:00 – 10/7 24:00</strong>，你全程不花过路费。</p>
+  <p class="lede">高速免费到 <strong>10/7 24:00</strong>，你全程不花过路费。更重要的是：<strong>10/5 上午完全不在返程高峰里。</strong></p>
 
   <h3>七天拥堵日历</h3>
   <div class="card" style="padding:20px 18px">
@@ -784,16 +761,6 @@ footer b{color:var(--ink-2)}
       <div>10/3<br><small class="muted">六</small></div><div>10/4<br><small class="muted">日</small></div>
       <div>10/5<br><small class="muted">一</small></div><div>10/6<br><small class="muted">二</small></div>
       <div>10/7<br><small class="muted">三</small></div>
-    </div>
-    <div class="strip" style="margin-bottom:8px">
-      <div class="rl">去程</div>
-      <div class="cell lv4 you">严重<span class="dt">你出发</span></div>
-      <div class="cell lv3">拥堵<span class="dt">上午</span></div>
-      <div class="cell lv2">缓行</div>
-      <div class="cell lv1">畅通</div>
-      <div class="cell lv1">畅通</div>
-      <div class="cell lv1">畅通</div>
-      <div class="cell lv1">畅通</div>
     </div>
     <div class="strip">
       <div class="rl">返程</div>
@@ -810,226 +777,112 @@ footer b{color:var(--ink-2)}
       <span><i style="background:var(--warning)"></i>缓行</span>
       <span><i style="background:var(--serious)"></i>拥堵</span>
       <span><i style="background:var(--critical)"></i>严重拥堵</span>
-      <span class="muted">粗框 = 你的行程日</span>
+      <span class="muted">粗框 = 你的返程日</span>
     </div>
   </div>
-  <p style="font-size:13px;color:var(--ink-3);margin-top:10px">拥堵等级为基于历年国庆规律与交管部门高峰预测的估计，非实时数据。出发前请以高德/百度实时路况为准。10/5 下午起返程车流会逐渐增加，所以建议早上 7 点就走。</p>
+  <p style="font-size:13px;color:var(--ink-3);margin-top:10px">广东省交通运输厅研判：返程高峰为 <b>10/6–10/7 每日 14–21 时</b>，深圳方向集中在 <b>16–18 时</b>。全省高速日均车流约 1000 万车次。10/5 上午出发完全避开。</p>
 
-
-
-  <h3>10/1 出深圳走南线</h3>
+  <h3>10/5 走哪条</h3>
   <div class="card" style="border-left:4px solid var(--brand)">
-    <p style="font-size:15.5px;margin:0 0 8px"><strong>深中通道 → 中山 → 江门 → 开阳高速 → 云浮 → G80 广昆 → 梧州</strong></p>
-    <p style="font-size:14.5px;color:var(--ink-2);margin:0">完全不进广州绕城。堵点是深中通道本身和云浮、肇庆一带，16:30 出发时这两处通常已经化开。</p>
-    <p style="font-size:14px;color:var(--ink-3);margin:10px 0 0">若被迫提前到 13:00–15:00 出发，改走北线：南沙大桥 → G4W3 广澳 → 广州绕城南环 → G80 广昆。走南沙大桥，不走虎门大桥。</p>
+    <p style="font-size:15.5px;margin:0 0 8px"><strong>茂名 → G15 沈海高速 → 阳江 → 江门 → 深中通道 → 深圳</strong></p>
+    <p style="font-size:14.5px;color:var(--ink-2);margin:0">390km，正常 4.5h。06:30 出发，11:00 前后到家。</p>
+    <p style="font-size:14px;color:var(--ink-3);margin:10px 0 0">深中通道若有排队，可从江门改走广珠西 → 南沙大桥进深圳。粤西方向沈海、汕湛、湛徐三条高速假期流量都大，但那是下午的事。</p>
   </div>
 
-  <h3>国道备选（真堵死了才下高速）</h3>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>堵在哪</th><th>下高速走</th><th>说明</th></tr></thead>
-      <tbody>
-        <tr><td><b>肇庆 – 封开 – 梧州</b></td><td class="num"><b>G321 国道</b></td><td>基本与广昆高速平行，沿西江走，路况不错，风景也好</td></tr>
-        <tr><td><b>梧州 – 南宁</b></td><td class="num"><b>G324 国道</b></td><td>经藤县、桂平、贵港到南宁</td></tr>
-        <tr><td><b>梧州往后整段</b></td><td class="num">改走南线高速</td><td>G65 包茂南下玉林，再接 G72 泉南到南宁，车流分散很多</td></tr>
-      </tbody>
-    </table>
-  </div>
   <div class="callout warn">
-    <span class="tag">别搞反了</span>
-    <p>不要为了「走国道」而走国道。1600km 全程国道会把时间翻倍，人更累。<strong>国道只用来绕开具体的死点</strong> —— 导航显示前方红了 20 公里、预计 2 小时，才下去。</p>
+    <span class="tag">开电车注意</span>
+    <p><strong>10/5 11:00–21:00 是返程充电高峰</strong>，服务区充电桩会排队。06:30 出发正好躲开，但<strong>出发前在茂名充满</strong>。</p>
   </div>
-
-  <h3>广西境内这两条一定要走</h3>
-  <div class="grid g2">
-    <div class="card">
-      <h4>合那高速 · 大新–靖西段</h4>
-      <p style="font-size:14.5px;color:var(--ink-2);margin:0">被本地人称为「广西最美高速」。喀斯特峰林、稻田、晨雾，沿途观景台可随时停车。Day 3 从德天去靖西正好走到。</p>
-    </div>
-    <div class="card">
-      <h4>延边公路 S325 · 明仕↔德天</h4>
-      <p style="font-size:14.5px;color:var(--ink-2);margin:0">走崇左一级公路要过<strong>硕龙收费站，平时每次 10 元</strong>（来回 20）。延边公路紧贴中越边境线，既好看又绕开收费站。国庆免费政策通常覆盖这类收费站，但这条路本身就值得走。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════  DETIAN  ══════════════════════════════ -->
-<section class="wrap" id="detian">
-  <p class="eyebrow">10/3 早上</p>
-  <h2>德天瀑布</h2>
-  <p class="lede">全程唯一会真正堵的地方，堵的不是高速，是景区门口那几公里窄路。7:30 前进场。</p>
-
-  <h3>停车与买票：按到达时间决定</h3>
-  <figure>
-    <div class="fig-scroll">
-      <svg viewBox="0 0 1000 400" role="img" aria-label="德天瀑布停车与购票决策图">
-        <rect width="1000" height="400" fill="var(--paper-2)"/>
-        <!-- root -->
-        <rect x="360" y="20" width="280" height="56" rx="12" fill="var(--paper-3)" stroke="var(--rule-2)" stroke-width="2"/>
-        <text x="500" y="44" text-anchor="middle" font="700 16px var(--font-sans)" fill="var(--ink)" style="font:700 16px var(--font-sans)">几点到景区门口？</text>
-        <text x="500" y="64" text-anchor="middle" style="font:500 12.5px var(--font-sans)" fill="var(--ink-3)">这是唯一需要判断的事</text>
-
-        <!-- branch lines -->
-        <path d="M430 76 L430 108 L190 108 L190 140" stroke="var(--good)" stroke-width="3" fill="none"/>
-        <path d="M500 76 L500 140" stroke="var(--warning)" stroke-width="3" fill="none"/>
-        <path d="M570 76 L570 108 L810 108 L810 140" stroke="var(--serious)" stroke-width="3" fill="none"/>
-
-        <!-- A -->
-        <rect x="40" y="140" width="300" height="212" rx="14" fill="var(--d2-soft)" stroke="var(--d2)" stroke-width="2"/>
-        <text x="190" y="170" text-anchor="middle" style="font:800 17px var(--font-sans)" fill="var(--d2)">7:00 前到</text>
-        <text x="190" y="196" text-anchor="middle" style="font:700 14px var(--font-sans)" fill="var(--ink)">自驾进核心区</text>
-        <text x="64" y="222" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">导航「越姆娘好吃餐厅」</text>
-        <text x="64" y="244" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">路过游客中心<tspan font-weight="700">别进</tspan>，走左岔路</text>
-        <text x="64" y="266" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">停村民停车位 · 30 元不限时</text>
-        <text x="64" y="288" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">步行 2–3 分钟到检票口</text>
-        <text x="64" y="310" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">只买 <tspan font-weight="700">80 元</tspan> 门票</text>
-        <rect x="64" y="322" width="188" height="22" rx="6" fill="var(--d2)" opacity=".18"/>
-        <text x="72" y="338" style="font:700 12.5px var(--font-sans)" fill="var(--d2)">省下 35 元/人 接驳车</text>
-
-        <!-- B -->
-        <rect x="360" y="140" width="280" height="212" rx="14" fill="var(--d4-soft)" stroke="var(--d4)" stroke-width="2"/>
-        <text x="500" y="170" text-anchor="middle" style="font:800 17px var(--font-sans)" fill="var(--d4)">7:00–8:00 到</text>
-        <text x="500" y="196" text-anchor="middle" style="font:700 14px var(--font-sans)" fill="var(--ink)">还可以试，但别恋战</text>
-        <text x="382" y="222" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">照上面走，但当地人提醒：</text>
-        <text x="382" y="244" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">越姆娘那个停车场<tspan font-weight="700">只能停</tspan></text>
-        <text x="382" y="264" style="font:500 13px var(--font-sans)" fill="var(--ink-2)"><tspan font-weight="700">十来辆</tspan>，员工车都占了</text>
-        <text x="382" y="290" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">德天村有阿姨招呼停车</text>
-        <text x="382" y="316" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">位置找不到就立刻退回</text>
-        <text x="382" y="338" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">游客中心，改走右边方案</text>
-
-        <!-- C -->
-        <rect x="660" y="140" width="300" height="212" rx="14" fill="var(--d3-soft)" stroke="var(--d3)" stroke-width="2"/>
-        <text x="810" y="170" text-anchor="middle" style="font:800 17px var(--font-sans)" fill="var(--d3)">8:00 后到</text>
-        <text x="810" y="196" text-anchor="middle" style="font:700 14px var(--font-sans)" fill="var(--ink)">别赌窄路，走官方</text>
-        <text x="684" y="222" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">停游客中心停车场</text>
-        <text x="684" y="244" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">买 <tspan font-weight="700">115 元</tspan> 门票+观光车联票</text>
-        <text x="684" y="266" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">坐接驳大巴约 10km 进核心区</text>
-        <text x="684" y="288" style="font:500 13px var(--font-sans)" fill="var(--ink-2)">多花 35 元，换确定性</text>
-        <rect x="684" y="302" width="248" height="42" rx="6" fill="var(--d3)" opacity=".13"/>
-        <text x="692" y="318" style="font:700 12.5px var(--font-sans)" fill="var(--d3)">当地人原话：去游客中心不堵，</text>
-        <text x="692" y="336" style="font:700 12.5px var(--font-sans)" fill="var(--d3)">自驾进核心景区才容易堵</text>
-
-        <!-- footer note -->
-        <rect x="40" y="366" width="920" height="26" rx="8" fill="var(--clay)" opacity=".12"/>
-        <text x="500" y="384" text-anchor="middle" style="font:700 13px var(--font-sans)" fill="var(--clay)">三种情况都一样：过硕龙镇牌坊后走左边新路，避开镇上会车堵点</text>
-      </svg>
-    </div>
-    <p class="swipe-hint">← 左右滑动查看完整图 →</p>
-    <figcaption>「越姆娘好吃餐厅」在部分攻略里也被写作「赵母娘好吃餐厅」，指同一处。景区内部路况 2026 年 7 月实测仍在断续修路，局部单车道，低底盘轿车慎入。</figcaption>
-  </figure>
-
-  <h3>费用清单</h3>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>项目</th><th class="num">价格</th><th>要不要买</th></tr></thead>
-      <tbody>
-        <tr><td><b>大门票</b></td><td class="num">¥80 / 人</td><td>要。提前一天网上买，当天美团也能买</td></tr>
-        <tr><td><b>门票 + 观光车联票</b></td><td class="num">¥115 / 人</td><td>只有停游客中心时才需要</td></tr>
-        <tr><td><b>停车</b></td><td class="num">¥30 / 车</td><td>不限时</td></tr>
-        <tr><td>竹筏</td><td class="num">¥48 / 人</td><td>看心情。水位高时会停开，现场买票</td></tr>
-        <tr><td>魔毯 + 滑道</td><td class="num">¥88 / 人</td><td>可不买</td></tr>
-        <tr><td>夜场「奇妙·夜德天」</td><td class="num">¥168 / 人</td><td>本行程时间上排不下</td></tr>
-        <tr><td>836 号界碑</td><td class="num">免费</td><td>必打卡</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p style="font-size:13px;color:var(--ink-3);margin-top:10px">景区开放 08:00–18:30。实际步道不大，从容走完 40 分钟到 2 小时。靠近水流处水汽极大，会被淋成落汤鸡 —— 带伞或帽子。</p>
 </section>
 
 <!-- ══════════════════════════════  SPOTS  ══════════════════════════════ -->
 <section class="wrap" id="spots">
   <p class="eyebrow">景点</p>
-  <h2>景点</h2>
+  <h2>北海与湛江</h2>
 
   <div class="grid g2">
 
     <div class="spot">
       <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
-        <path d="M2 32 L12 14 Q14 10 16 14 L24 28 L30 18 Q32 14 34 18 L44 32Z" fill="var(--d2)" opacity=".35"/>
-        <path d="M2 32 q10 -4 20 -2 t22 2" stroke="var(--d4)" stroke-width="2" fill="none"/>
+        <path d="M2 24 q6 -7 12 0 t12 0 t12 0 t8 0" stroke="var(--d3)" stroke-width="2.4" fill="none"/>
+        <path d="M2 31 q6 -7 12 0 t12 0 t12 0 t8 0" stroke="var(--d3)" stroke-width="2.4" fill="none" opacity=".6"/>
+        <circle cx="34" cy="9" r="6" fill="var(--d4)" opacity=".5"/>
       </svg>
-      <h4>明仕田园 <span class="price">大门免费</span></h4>
+      <h4>北海银滩 <span class="price">免费</span></h4>
       <ul>
-        <li><b>十里画廊 + 幸福桥</b> —— 停车免费，明仕真正的精华</li>
-        <li><b>骑电动车沿田埂</b>，自己找机位，比景区那段强</li>
-        <li>竹筏 ¥120：评价两极，多人说圈起来那段太小不划算</li>
-        <li>鱼鳞坝：停车 ¥10，主要是小孩玩水，不带娃可跳过</li>
-        <li>顺路：<b>峒那屿湾</b>、<b>蓝洞咖啡</b>（在明仕↔德天路上）</li>
+        <li>沙细滩平坡缓，能往海里走很远</li>
+        <li>北部湾靠近河口，<b>水常年偏浑</b>，不是三亚那种透亮</li>
+        <li><b>日落后去</b>：不晒、人散了、光也好</li>
       </ul>
     </div>
 
     <div class="spot">
       <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
-        <path d="M6 4 h12 q3 20 -2 24 h-9 q-4 -6 -1 -24Z" fill="var(--d3)" opacity=".45"/>
-        <path d="M20 6 h10 q2 18 -2 22 h-8 q-3 -6 0 -22Z" fill="var(--d3)" opacity=".3"/>
-        <ellipse cx="19" cy="30" rx="17" ry="3.5" fill="var(--d2)" opacity=".3"/>
-        <path d="M34 8 l4 -4 l4 4 l-4 4Z" fill="var(--d4)" opacity=".6"/>
+        <path d="M6 28 h34 M9 28 v-11 h8 v11 M23 28 v-14 h8 v14" stroke="var(--clay)" stroke-width="2.2" fill="none"/>
+        <path d="M7 17 l6 -6 l6 6 M21 14 l6 -6 l6 6" stroke="var(--clay)" stroke-width="2.2" fill="none"/>
+        <circle cx="38" cy="12" r="4" fill="var(--d2)" opacity=".5"/>
       </svg>
-      <h4>德天跨国瀑布 <span class="price">¥80 + 停车 ¥30</span></h4>
+      <h4>侨港风情街 <span class="price">免费 · 重点</span></h4>
       <ul>
-        <li><b>7:30 前进场</b>，这是唯一重要的事</li>
-        <li><b>稻田咖啡屋</b>：不用买咖啡也能进，进场后直奔</li>
-        <li>836 号界碑免费打卡</li>
-        <li>水汽极大，靠近水流会被淋湿 —— 带伞或帽子</li>
-        <li>别在硕龙街吃饭，实测比景区还贵</li>
+        <li>1978 年安置<b>越南归侨</b>建的社区</li>
+        <li>北海最值得吃的地方：海鲜大排档、越南卷粉、糖水、虾饼</li>
+        <li>旁边的侨港海滩比银滩小，但更干净、人更少</li>
+        <li><b>比银滩值得。</b>晚饭和第二天早餐都在这里解决</li>
       </ul>
     </div>
 
     <div class="spot">
       <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
-        <ellipse cx="23" cy="24" rx="20" ry="7" fill="var(--d3)" opacity=".25"/>
-        <path d="M4 20 q6 -8 12 0 t12 0 t12 0" stroke="var(--d3)" stroke-width="2" fill="none" opacity=".7"/>
-        <path d="M8 14 h30 M10 14 v-5 M18 14 v-5 M28 14 v-5 M36 14 v-5" stroke="var(--clay)" stroke-width="2" fill="none" opacity=".7"/>
+        <path d="M2 30 L14 12 Q16 8 18 12 L30 30Z" fill="var(--brand)" opacity=".3"/>
+        <circle cx="34" cy="8" r="5" fill="var(--d4)" opacity=".55"/>
+        <path d="M2 30 h42" stroke="var(--d3)" stroke-width="2" opacity=".5"/>
       </svg>
-      <h4>鹅泉 <span class="price">¥30–48 · 早晚免票</span></h4>
+      <h4>冠头岭 <span class="price">免费 · 看时间</span></h4>
       <ul>
-        <li>5/1–10/31 开放 <b>07:00–19:30</b></li>
-        <li><b>7:00 前 / 18:00 后可免费入园</b> —— 正好也是光线最好的时候</li>
-        <li>十五孔桥 + 倒影 + 村子炊烟</li>
-        <li>离靖西市区约 10–20km</li>
+        <li>北海西边的山，看<b>海上日落</b>和礁石，也是有名的观鸟点</li>
+        <li>10 月初日落约 <b>18:15</b></li>
+        <li>只有 17:40 前能到北海才去，否则直接去侨港</li>
       </ul>
     </div>
 
     <div class="spot">
       <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
-        <circle cx="23" cy="17" r="11" fill="var(--d5)" opacity=".3"/>
-        <path d="M23 6 v22 M12 17 h22 M15 9 l16 16 M31 9 L15 25" stroke="var(--clay)" stroke-width="1.6" opacity=".7"/>
-        <path d="M23 28 q-3 5 -6 6 M23 28 q3 5 6 6" stroke="var(--clay)" stroke-width="1.6" fill="none" opacity=".7"/>
+        <path d="M4 26 h38 M7 26 v-13 M13 26 v-13 M19 26 v-13 M25 26 v-13 M31 26 v-13 M37 26 v-13" stroke="var(--clay)" stroke-width="2" fill="none"/>
+        <path d="M4 13 h38 l-4 -5 h-30Z" fill="var(--clay)" opacity=".4"/>
       </svg>
-      <h4>旧州古镇 <span class="price">免费 · 绣球 DIY ¥30</span></h4>
+      <h4>赤坎老街 <span class="price">免费</span></h4>
       <ul>
-        <li>离靖西市区 8km，绣球一条街</li>
-        <li>30 元可以自己做一个绣球带走 —— 这趟唯一的手作体验</li>
-        <li>配合鹅泉，半个上午足够</li>
+        <li>湛江的骑楼老街，<b>边逛边吃</b>就是正确玩法</li>
+        <li>胡须佬椰子汁、狗毛膏、曹记炸串（近中山路麦当劳）</li>
+        <li>珍姐白切鸡、鸣记鸡煲都在附近</li>
+        <li>糖水：荣叔糖水店，基本都 5 块一碗</li>
       </ul>
     </div>
 
-    <div class="spot" style="opacity:.92">
+    <div class="spot">
       <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
-        <path d="M2 26 q12 -6 22 -3 t20 -1" stroke="var(--d3)" stroke-width="2.5" fill="none" opacity=".6"/>
-        <path d="M6 14 L16 4 L26 14Z" fill="var(--brand)" opacity=".28"/>
-        <path d="M24 16 L32 8 L40 16Z" fill="var(--brand)" opacity=".2"/>
+        <ellipse cx="23" cy="20" rx="17" ry="9" fill="var(--d3)" opacity=".3"/>
+        <path d="M4 20 Q10 6 23 6 Q36 6 42 20" stroke="var(--brand)" stroke-width="2.2" fill="none" opacity=".6"/>
       </svg>
-      <h4>渠洋湖 <span class="price">免费 · 可选</span></h4>
+      <h4>湖光岩 <span class="price">约 ¥50 · 二选一</span></h4>
       <ul>
-        <li>导航定位 <b>「岜旗观景亭」</b></li>
-        <li>爬小山到观景台就够了，<b>游船可以省掉</b></li>
-        <li>在靖西北边约 30km，是绕路 —— 时间紧就砍</li>
+        <li>火山口<b>玛珥湖</b>，世界地质公园</li>
+        <li>可环湖走，也有电瓶车</li>
+        <li>在城西南，和金沙湾分别在两头，<b>只去一个</b></li>
       </ul>
     </div>
 
-    <div class="spot" style="opacity:.92">
+    <div class="spot">
       <svg class="ico" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
-        <g stroke="var(--d4)" stroke-width="2.4" fill="none">
-          <path d="M3 10 q14 -5 28 -2 t12 1"/><path d="M3 17 q14 -5 28 -2 t12 1"/>
-          <path d="M3 24 q14 -5 28 -2 t12 1"/><path d="M3 31 q14 -5 28 -2 t12 1"/>
-        </g>
+        <path d="M2 22 q8 -6 16 0 t16 0 t10 0" stroke="var(--d3)" stroke-width="2.4" fill="none"/>
+        <path d="M2 29 q8 -6 16 0 t16 0 t10 0" stroke="var(--d3)" stroke-width="2.4" fill="none" opacity=".55"/>
+        <path d="M8 16 v-8 M16 16 v-11 M24 16 v-8" stroke="var(--brand)" stroke-width="2" opacity=".5"/>
       </svg>
-      <h4>巴泽梯田 <span class="price">免费 · 看车况</span></h4>
+      <h4>金沙湾观海长廊 <span class="price">免费 · 二选一</span></h4>
       <ul>
-        <li>9–10 月正是金黄期，10 月去正好</li>
-        <li><b>最后 4–5km 山道极窄只容一车</b>，弯多、视线差</li>
-        <li>新手和低底盘轿车别去</li>
+        <li>霞山这边的海边步道，顺路、不花钱</li>
+        <li>住宿也建议订这一带</li>
+        <li>离振兴路大排档近，吃完生蚝直接上高速往东</li>
       </ul>
     </div>
 
@@ -1039,86 +892,89 @@ footer b{color:var(--ink-2)}
 <!-- ══════════════════════════════  FOOD  ══════════════════════════════ -->
 <section class="wrap" id="food">
   <p class="eyebrow">美食</p>
-  <h2>按城市吃</h2>
-  <p class="lede">靖西是这趟的美食重点。★ 越多越值得专门去一趟。</p>
+  <h2>湛江吃什么</h2>
+  <p class="lede">下面是本地人自己的排序，不是游客榜。★ 越多越值得专门去一趟。</p>
 
   <div class="food-city">
-    <h4><span class="dot" style="background:var(--d1)"></span>梧州　<small class="muted" style="font-weight:400">10/1 夜宵 · 10/2 早餐</small></h4>
+    <h4><span class="dot" style="background:var(--d4)"></span>湛江 · 并列第一</h4>
     <div class="food">
-      <div class="food-item"><span class="star">—</span><div><b>纸包鸡</b><p>梧州招牌，到得晚就直接找一家还开着的。</p></div></div>
-      <div class="food-item"><span class="star">—</span><div><b>冰泉豆浆</b><p>留给第二天早餐，配油条。</p></div></div>
-      <div class="food-item"><span class="star">—</span><div><b>龟苓膏 · 炒田螺</b><p>夜宵搭配。</p></div></div>
+      <div class="food-item"><span class="star">★★★</span><div><b>生蚝 🦪</b><p>湛江美食天花板，蒸烤炸生食全覆盖。<b>烧蚝帮</b>（蒜蓉原味 / 芥末 / 陈皮 / 蒜辣，很多外地人专程去）；或<b>振兴路大排档一条街</b>整条街随便挑，<b>北云</b>不错；<b>兄弟情大排档</b>也行但远一点。</p></div></div>
+      <div class="food-item"><span class="star">★★★</span><div><b>海鲜汤 🍲</b><p>鱼仔汤、杂锦海鲜汤，鲜甜清爽，小海鲜料超足，<b>均价不到 20 块</b>。认准<b>霞山二十中旁边的「海鲜汤与金针牛饭店」</b>。规律：哪家排队多喝哪家，基本不会错。</p></div></div>
     </div>
   </div>
 
   <div class="food-city">
-    <h4><span class="dot" style="background:var(--d2)"></span>明仕 / 德天　<small class="muted" style="font-weight:400">10/2–10/3</small></h4>
+    <h4><span class="dot" style="background:var(--d4)"></span>湛江 · 别漏</h4>
     <div class="food">
-      <div class="food-item"><span class="star">★</span><div><b>民宿自家菜</b><p>最划算，也最省事。明仕的民宿普遍管饭。</p></div></div>
-      <div class="food-item"><span class="star">—</span><div><b>德天景区路上的土菜馆</b><p>比景区内和硕龙街都实在。</p></div></div>
-      <div class="food-item"><span class="star">✕</span><div><b>硕龙街</b><p>实测「很多比德天景区还贵」，果断避开。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>五杯鸭</b><p>本地家常本命菜，甜甜咸咸超入味。<b>海滨鸭仔店</b>，或赤坎、霞山任何排队的鸭仔饭店。部分店偏咸，配面豉番薯叶绝配。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>白切鸡</b><p>走地鸡，本地宴席标配。赤坎老街附近的<b>珍姐白切鸡</b>；<b>巫记鸡饭店</b>也有名。吃不惯清淡的可以先从鸡煲过渡。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>白灼虾 · 沙虫</b><p>纯靠新鲜取胜，蘸少许酱油就行。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>生滚粥</b><p>泥丁、沙虫、鲜鱼、鸡肉粥，现滚现煮。<b>和优泥虫粥</b>、<b>荔记泥虫粥</b>。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>葱头牛肉汤</b><p>评论区本地人补的一条，说很香。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>菠萝牛肉</b><p>有人说德国人为这个开 5 小时车来。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>枸杞叶猪杂汤</b><p>湛江专属早餐，枸杞叶汤底清甜解腻。点的时候<b>备注要枸杞叶</b>，不然会被换成丝瓜或菜心。</p></div></div>
+      <div class="food-item"><span class="star">—</span><div><b>脆皮烧猪 · 湿辣牛肉 · 簸箕炊</b><p>烧猪油脂重浅尝即可；湿辣牛肉是本地烧烤，香辣上头但容易上火；簸箕炊偏噎，看口味。</p></div></div>
     </div>
   </div>
 
   <div class="food-city">
-    <h4><span class="dot" style="background:var(--d3)"></span>靖西　<small class="muted" style="font-weight:400">10/3 晚 – 10/4 中午 · 本趟重点</small></h4>
+    <h4><span class="dot" style="background:var(--d5)"></span>湛江 · 甜品饮料（这块很强）</h4>
     <div class="food">
-      <div class="food-item"><span class="star">★★★</span><div><b>靖西德保鲜牛肉馆</b><p>牛肉火锅，「新鲜便宜又好吃」，多篇强烈推荐。首选这家。</p></div></div>
-      <div class="food-item"><span class="star">★★★</span><div><b>雾屿酒馆 的鸭脚煲</b><p>被称为「靖西第一好吃的鸭脚煲」。现炸腐竹、虎皮鹌鹑蛋、粉芋头，浓汤底越煮越好。</p></div></div>
-      <div class="food-item"><span class="star">★★</span><div><b>川妹子火锅</b><p>本地人公认靖西最好的火锅，胸口油切得很薄。</p></div></div>
-      <div class="food-item"><span class="star">★★</span><div><b>阿拉汀</b><p>是 KTV 但菜好吃。酸辣面（据说是靖西最好吃的）、手撕包菜。</p></div></div>
-      <div class="food-item"><span class="star">★</span><div><b>经典咖啡（小碗菜）</b><p>老牌餐厅，虾粥推荐，粥底绵密还放芋头丁。</p></div></div>
-      <div class="food-item"><span class="star">★</span><div><b>古镇的齐齐哈尔烤肉</b><p>旧州那边，平价，大丰收（隐藏菜）是一大条排骨。</p></div></div>
-      <div class="food-item"><span class="star">★</span><div><b>靖西米饺</b><p>非遗。本地粳米磨浆蒸皮，包猪肉木耳马蹄，放凉吃，特别 Q 弹。</p></div></div>
-      <div class="food-item"><span class="star">★</span><div><b>大香糯 · 酸嘢</b><p>酸嘢是腌芒果木瓜萝卜，酸甜辣开胃。大香糯可以买点带回去。</p></div></div>
+      <div class="food-item"><span class="star">★★★</span><div><b>本地柠檬茶</b><p>湛江柠檬茶吊打很多城市。连锁老牌 <b>邻里</b> 就是湛江起家的，茶底香浓不涩，随便点不踩雷。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>糖水</b><p>赤坎的<b>荣叔糖水店</b>，基本都 5 块一碗，芋头椰汁西米露料给得很足。隔壁<b>瘦鬼</b>更有名，但本地人说荣叔更实在。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>鸡屎藤糖水 · 芝麻糊凉粉</b><p>本地清热解暑特色，饭后一碗解腻。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>百美香</b><p>本土平价连锁，便宜大杯，<b>西瓜奶必点</b>。</p></div></div>
     </div>
   </div>
 
   <div class="food-city">
-    <h4><span class="dot" style="background:var(--d4)"></span>南宁　<small class="muted" style="font-weight:400">10/4 晚</small></h4>
+    <h4><span class="dot" style="background:var(--d3)"></span>北海 · 侨港</h4>
     <div class="food">
-      <div class="food-item"><span class="star">★★</span><div><b>老友粉</b><p>舒记、复记都是常年被点名的老店。</p></div></div>
-      <div class="food-item"><span class="star">★★</span><div><b>雷记饭店 · 广西菜（埌西店）</b><p>鹅特别好吃，小红书上被反复点名。</p></div></div>
-      <div class="food-item"><span class="star">★</span><div><b>柠檬鸭 · 酸笋田螺 · 卷筒粉</b><p>南宁三件套。</p></div></div>
-      <div class="food-item"><span class="star">—</span><div><b>夜市去建政路</b><p>中山路现在游客店偏多，建政路更实在。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>海鲜大排档</b><p>侨港风情街整条街都是。皮皮虾、花蟹、沙虫。</p></div></div>
+      <div class="food-item"><span class="star">★★</span><div><b>越南卷粉 · 虾饼</b><p>归侨社区的底色，别的地方吃不到这个版本。</p></div></div>
+      <div class="food-item"><span class="star">★</span><div><b>海鲜粥 · 糖水</b><p>第二天早餐就吃这个，7 点出门前解决。</p></div></div>
+    </div>
+  </div>
+
+  <div class="food-city">
+    <h4><span class="dot" style="background:var(--d1)"></span>茂名 · 夜宵</h4>
+    <div class="food">
+      <div class="food-item"><span class="star">★★</span><div><b>化州糖水</b><p>全国那些「化州糖水」连锁的发源地就在这儿。到茂名刚好当夜宵。</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════  CHECKLIST  ══════════════════════════════ -->
 <section class="wrap" id="pack">
-  <p class="eyebrow">出发前</p>
+  <p class="eyebrow">返程</p>
   <h2>清单</h2>
 
   <div class="grid g2">
     <div>
-      <h3 style="margin-top:0">必带</h3>
+      <h3 style="margin-top:0">今天路上</h3>
       <ul class="check">
-        <li><b>身份证</b> —— 边境线上有检查站，会查车查证，不是可带可不带</li>
-        <li><b>伞或帽子</b> —— 德天靠近水流处水汽极大，很多人被淋成落汤鸡</li>
-        <li><b>防蚊液</b> —— 瀑布区蚊子多</li>
-        <li><b>舒适的鞋</b> —— 德天步道 + 旧州石板路</li>
-        <li><b>零钱 / 现金</b> —— 村民停车位、乡镇小店未必都能扫码</li>
-        <li><b>薄外套</b> —— 早上 6 点山里和傍晚水边都凉</li>
+        <li><b>订今晚北海酒店</b> —— 金沙湾或侨港附近，越早越好</li>
+        <li><b>崇左之前把油加满</b> —— 钦崇高速沿线服务区少</li>
+        <li><b>导航设「钦崇高速」不要让它绕南宁</b> —— 默认路线有时会走南宁</li>
+        <li><b>身份证随身</b> —— 这段还在边境管理区范围</li>
       </ul>
     </div>
     <div>
-      <h3 style="margin-top:0">车和票</h3>
+      <h3 style="margin-top:0">明后两天</h3>
       <ul class="check">
-        <li><b>10/2 晚上把德天 80 元门票买好</b>（提前一天，或当天美团）</li>
-        <li><b>南宁或崇左把油加满</b> —— 靖西、德天一带加油站少</li>
-        <li><b>检查胎压和备胎</b> —— 山路隧道多、限速 80，局部单车道</li>
-        <li><b>德天进核心区那段在修路</b>，局部单车道，低底盘轿车慎入</li>
-        <li><b>离线地图</b> —— 边境山区信号会断</li>
-        <li><b>行车记录仪存储卡清空</b></li>
+        <li><b>订 10/4 茂名酒店</b> —— 今晚睡前订好</li>
+        <li><b>湛江停车</b> —— 赤坎老街一带窄，找正规停车场</li>
+        <li><b>10/5 前一晚把油 / 电充满</b> —— 返程充电高峰 11:00 起</li>
+        <li><b>生蚝注意量</b> —— 第二天还有 5 小时车程</li>
+        <li><b>10/5 06:30 出发</b> —— 这是中午前到家的前提</li>
       </ul>
     </div>
   </div>
 </section>
 
 <footer class="wrap">
-  <p>票价、开放时间、路况均为整理时的公开信息，<b>出行前再核对一次</b> —— 德天景区的停车与接驳政策在 2025–2026 年间改过不止一次。实时路况以高德 / 百度为准。</p>
-  <p class="muted">整理于 2026 年 9 月 29 日 · 祝一路顺风</p>
+  <p>票价、开放时间、路况均为整理时的公开信息，<b>出行前再核对一次</b>。实时路况以高德 / 百度为准。</p>
+  <p class="muted">10/3 按实际行程更新 · 祝一路顺风</p>
 </footer>
 
 <script>
